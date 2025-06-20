@@ -39,18 +39,7 @@ Our brand balances **professionalism with innovation**. This style guide is the 
     <td><code>PrimaryAccent</code></td>
     <td><code>#E31937</code></td>
   </tr>
-  <tr>
-    <td><img src="https://img.shields.io/badge/-%20-E73B54?style=flat-square&logoColor=E73B54" width="20" height="20" alt=""/></td>
-    <td><strong>Primatif Red Light</strong></td>
-    <td><code>PrimaryAccentLight</code></td>
-    <td><code>#E73B54</code></td>
-  </tr>
-  <tr>
-    <td><img src="https://img.shields.io/badge/-%20-C1152E?style=flat-square&logoColor=C1152E" width="20" height="20" alt=""/></td>
-    <td><strong>Primatif Red Dark</strong></td>
-    <td><code>PrimaryAccentDark</code></td>
-    <td><code>#C1152E</code></td>
-  </tr>
+
   <tr>
     <td><img src="https://img.shields.io/badge/-%20-5C0411?style=flat-square&logoColor=5C0411" width="20" height="20" alt=""/></td>
     <td><strong>Primatif Red Darker</strong></td>
