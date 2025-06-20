@@ -28,55 +28,55 @@ Our brand balances **professionalism with innovation**. This style guide is the 
 <h4>Brand Colors</h4>
 <table>
   <tr>
-    <th style="width: 20px;"></th>
+    <th style="width: 20px;">Swatch</th>
     <th>Name</th>
     <th>Token</th>
     <th>Hex</th>
   </tr>
   <tr>
-    <td style="background-color: #E31937;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-E31937?style=flat-square&logoColor=E31937" width="20" height="20" alt=""/></td>
     <td><strong>Primatif Red</strong></td>
     <td><code>PrimaryAccent</code></td>
     <td><code>#E31937</code></td>
   </tr>
   <tr>
-    <td style="background-color: #E73B54;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-E73B54?style=flat-square&logoColor=E73B54" width="20" height="20" alt=""/></td>
     <td><strong>Primatif Red Light</strong></td>
     <td><code>PrimaryAccentLight</code></td>
     <td><code>#E73B54</code></td>
   </tr>
   <tr>
-    <td style="background-color: #C1152E;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-C1152E?style=flat-square&logoColor=C1152E" width="20" height="20" alt=""/></td>
     <td><strong>Primatif Red Dark</strong></td>
     <td><code>PrimaryAccentDark</code></td>
     <td><code>#C1152E</code></td>
   </tr>
   <tr>
-    <td style="background-color: #5C0411;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-5C0411?style=flat-square&logoColor=5C0411" width="20" height="20" alt=""/></td>
     <td><strong>Primatif Red Darker</strong></td>
     <td><code>PrimaryAccentDarker</code></td>
     <td><code>#5C0411</code></td>
   </tr>
   <tr>
-    <td style="background-color: #53C8ED;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-53C8ED?style=flat-square&logoColor=53C8ED" width="20" height="20" alt=""/></td>
     <td><strong>Primatif Sky Blue</strong></td>
     <td><code>SecondaryAccent</code></td>
     <td><code>#53C8ED</code></td>
   </tr>
   <tr>
-    <td style="background-color: #A0DFF2;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-A0DFF2?style=flat-square&logoColor=A0DFF2" width="20" height="20" alt=""/></td>
     <td><strong>Sky Blue Light</strong></td>
     <td><code>AccentSkyBlue</code></td>
     <td><code>#A0DFF2</code></td>
   </tr>
   <tr>
-    <td style="background-color: #0080A4;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-0080A4?style=flat-square&logoColor=0080A4" width="20" height="20" alt=""/></td>
     <td><strong>Deep Blue</strong></td>
     <td><code>AccentDeepBlue</code></td>
     <td><code>#0080A4</code></td>
   </tr>
   <tr>
-    <td style="background-color: #08FF08;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-08FF08?style=flat-square&logoColor=08FF08" width="20" height="20" alt=""/></td>
     <td><strong>Green Screen Green</strong></td>
     <td><code>TertiaryAccent</code></td>
     <td><code>#08FF08</code></td>
@@ -86,43 +86,43 @@ Our brand balances **professionalism with innovation**. This style guide is the 
 <h4>Functional Tones</h4>
 <table>
   <tr>
-    <th style="width: 20px;"></th>
+    <th style="width: 20px;">Swatch</th>
     <th>Name</th>
     <th>Token</th>
     <th>Hex</th>
   </tr>
   <tr>
-    <td style="background-color: #212121;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-212121?style=flat-square&logoColor=212121" width="20" height="20" alt=""/></td>
     <td><strong>Primary Text</strong></td>
     <td><code>PrimaryText</code></td>
     <td><code>#212121</code></td>
   </tr>
   <tr>
-    <td style="background-color: #616161;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-616161?style=flat-square&logoColor=616161" width="20" height="20" alt=""/></td>
     <td><strong>Gray Dark</strong></td>
     <td><code>GrayDark</code></td>
     <td><code>#616161</code></td>
   </tr>
   <tr>
-    <td style="background-color: #9E9E9E;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-9E9E9E?style=flat-square&logoColor=9E9E9E" width="20" height="20" alt=""/></td>
     <td><strong>Gray Mid</strong></td>
     <td><code>GrayMid</code></td>
     <td><code>#9E9E9E</code></td>
   </tr>
   <tr>
-    <td style="background-color: #E0E0E0;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-E0E0E0?style=flat-square&logoColor=E0E0E0" width="20" height="20" alt=""/></td>
     <td><strong>Gray Light</strong></td>
     <td><code>GrayLight</code></td>
     <td><code>#E0E0E0</code></td>
   </tr>
   <tr>
-    <td style="background-color: #F3F4F6;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-F3F4F6?style=flat-square&logoColor=F3F4F6" width="20" height="20" alt=""/></td>
     <td><strong>Secondary Background</strong></td>
     <td><code>SecondaryBackground</code></td>
     <td><code>#F3F4F6</code></td>
   </tr>
   <tr>
-    <td style="background-color: #FFFFFF; border: 1px solid #ccc;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-FFFFFF?style=flat-square&logoColor=FFFFFF" width="20" height="20" alt=""/></td>
     <td><strong>Primary Background</strong></td>
     <td><code>PrimaryBackground</code></td>
     <td><code>#FFFFFF</code></td>
@@ -132,61 +132,61 @@ Our brand balances **professionalism with innovation**. This style guide is the 
 <h4>Semantic Colors</h4>
 <table>
   <tr>
-    <th style="width: 20px;"></th>
+    <th style="width: 20px;">Swatch</th>
     <th>Name</th>
     <th>Token</th>
     <th>Hex</th>
   </tr>
   <tr>
-    <td style="background-color: #2E7D32;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-2E7D32?style=flat-square&logoColor=2E7D32" width="20" height="20" alt=""/></td>
     <td><strong>Success Green</strong></td>
     <td><code>SemanticSuccessGreen</code></td>
     <td><code>#2E7D32</code></td>
   </tr>
   <tr>
-    <td style="background-color: #E8F5E9; border: 1px solid #ccc;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-E8F5E9?style=flat-square&logoColor=E8F5E9" width="20" height="20" alt=""/></td>
     <td><strong>Success Green Light</strong></td>
     <td><code>SemanticSuccessGreenLight</code></td>
     <td><code>#E8F5E9</code></td>
   </tr>
   <tr>
-    <td style="background-color: #C1152E;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-C1152E?style=flat-square&logoColor=C1152E" width="20" height="20" alt=""/></td>
     <td><strong>Error Red</strong></td>
     <td><code>ErrorRed</code></td>
     <td><code>#C1152E</code></td>
   </tr>
   <tr>
-    <td style="background-color: #FFE8EB; border: 1px solid #ccc;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-FFE8EB?style=flat-square&logoColor=FFE8EB" width="20" height="20" alt=""/></td>
     <td><strong>Error Red Light</strong></td>
     <td><code>ErrorRedLight</code></td>
     <td><code>#FFE8EB</code></td>
   </tr>
   <tr>
-    <td style="background-color: #FFC300;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-FFC300?style=flat-square&logoColor=FFC300" width="20" height="20" alt=""/></td>
     <td><strong>Warning Yellow</strong></td>
     <td><code>WarningYellow</code></td>
     <td><code>#FFC300</code></td>
   </tr>
   <tr>
-    <td style="background-color: #FFF8E1; border: 1px solid #ccc;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-FFF8E1?style=flat-square&logoColor=FFF8E1" width="20" height="20" alt=""/></td>
     <td><strong>Warning Yellow Light</strong></td>
     <td><code>WarningYellowLight</code></td>
     <td><code>#FFF8E1</code></td>
   </tr>
   <tr>
-    <td style="background-color: #53C8ED;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-53C8ED?style=flat-square&logoColor=53C8ED" width="20" height="20" alt=""/></td>
     <td><strong>Info Blue</strong></td>
     <td><code>InfoBlue</code></td>
     <td><code>#53C8ED</code></td>
   </tr>
   <tr>
-    <td style="background-color: #D1EEF9; border: 1px solid #ccc;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-D1EEF9?style=flat-square&logoColor=D1EEF9" width="20" height="20" alt=""/></td>
     <td><strong>Info Blue Light</strong></td>
     <td><code>InfoBlueLight</code></td>
     <td><code>#D1EEF9</code></td>
   </tr>
   <tr>
-    <td style="background-color: #BDBDBD;"></td>
+    <td><img src="https://img.shields.io/badge/-%20-BDBDBD?style=flat-square&logoColor=BDBDBD" width="20" height="20" alt=""/></td>
     <td><strong>Disabled Gray</strong></td>
     <td><code>DisabledGray</code></td>
     <td><code>#BDBDBD</code></td>
