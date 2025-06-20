@@ -291,12 +291,12 @@ const StyleGuideDocument = () => {
                                                                 <td className="p-3" style={{color: brandColors.GrayDark }}>2025-06-22</td>
                                                             </tr>
                                                              <tr className="border-b" style={{ backgroundColor: '#FFE8EB', borderColor: brandColors.GrayLight }}>
-                                                                <td className="p-3 font-bold" style={{color: brandColors.PrimaryAccentDark }}>Database Credentials Update</td>
+                                                                <td className="p-3 font-bold" style={{color: brandColors.PrimaryAccent }}>Database Credentials Update</td>
                                                                 <td className="p-3">
-                                                                    <span className="inline-block px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: brandColors.PrimaryAccentDark, color: brandColors.PrimaryBackground }}>❌ Blocked</span>
+                                                                    <span className="inline-block px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: brandColors.PrimaryAccent, color: brandColors.PrimaryBackground }}>❌ Blocked</span>
                                                                 </td>
-                                                                <td className="p-3 font-bold" style={{color: brandColors.PrimaryAccentDark }}>Tech Lead</td>
-                                                                <td className="p-3 font-bold" style={{color: brandColors.PrimaryAccentDark }}>2025-06-20</td>
+                                                                <td className="p-3 font-bold" style={{color: brandColors.PrimaryAccent }}>Tech Lead</td>
+                                                                <td className="p-3 font-bold" style={{color: brandColors.PrimaryAccent }}>2025-06-20</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>

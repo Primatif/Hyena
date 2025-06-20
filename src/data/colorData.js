@@ -2,8 +2,7 @@ import { brandColors } from './colors.js';
 
 export const brandColorsData = [
     { name: 'Primatif Red', token: 'PrimaryAccent', hex: brandColors.PrimaryAccent },
-    { name: 'Primatif Red Light', token: 'PrimaryAccentLight', hex: brandColors.PrimaryAccentLight },
-    { name: 'Primatif Red Dark', token: 'PrimaryAccentDark', hex: brandColors.PrimaryAccentDark },
+
     { name: 'Primatif Red Darker', token: 'PrimaryAccentDarker', hex: brandColors.PrimaryAccentDarker },
     { name: 'Primatif Sky Blue', token: 'SecondaryAccent', hex: brandColors.SecondaryAccent },
     { name: 'Sky Blue Light', token: 'AccentSkyBlue', hex: brandColors.AccentSkyBlue },

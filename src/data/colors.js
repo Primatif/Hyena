@@ -10,8 +10,7 @@ export const brandColors = {
 
     // Brand Colors (based on user request)
     PrimaryAccent: '#E31937',      // Primatif Red
-    PrimaryAccentLight: '#E73B54',   // Primatif Red Light
-    PrimaryAccentDark: '#C1152E',    // Primatif Red Dark
+
     PrimaryAccentDarker: '#5C0411', // Primatif Red Darker
     
     // Updated Blue Palette

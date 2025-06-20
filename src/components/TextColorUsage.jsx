@@ -40,7 +40,7 @@ const TextColorUsage = () => {
                      <div className="flex items-center">
                         <div className="w-4 h-4 rounded-full mr-2" style={{backgroundColor: brandColors.PrimaryAccent}}></div>
                         <a href="#" 
-                           style={{color: isHovered ? brandColors.PrimaryAccentDark : brandColors.PrimaryAccent, textDecoration: 'underline'}}
+                           style={{color: brandColors.PrimaryAccent, textDecoration: 'underline'}}
                            onMouseEnter={() => setIsHovered(true)}
                            onMouseLeave={() => setIsHovered(false)}
                         >
@@ -48,7 +48,7 @@ const TextColorUsage = () => {
                         </a>
                     </div>
                     <p className="text-sm mt-1" style={{color: brandColors.GrayDark}}>
-                        Links use <code className="text-xs bg-gray-200 p-1 rounded">PrimaryAccent</code> and darken to <code className="text-xs bg-gray-200 p-1 rounded">PrimaryAccentDark</code> on hover.
+                        Links use <code className="text-xs bg-gray-200 p-1 rounded">PrimaryAccent</code> and maintain the same color on hover.
                     </p>
                 </div>
             </div>
