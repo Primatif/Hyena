@@ -1,48 +1,32 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useMemo } from 'react';
 import tanishLogo from '../images/logo_tanish.png';
+import { brandColors } from './data/colors.js';
+import ExampleSection from './components/ExampleSection.jsx';
+import ColorDisplayTable from './components/ColorDisplayTable.jsx';
+import ColorPalette from './components/ColorPalette.jsx';
+import CodeBlock from './components/CodeBlock.jsx';
+import TextColorUsage from './components/TextColorUsage.jsx';
+import Typography from './components/Typography.jsx';
+import HeadersAndFooters from './components/HeadersAndFooters.jsx';
+import Buttons from './components/Buttons.jsx';
+import PatternsAndBackgrounds from './components/PatternsAndBackgrounds.jsx';
+import TableFormatting from './components/TableFormatting.jsx';
+import { typography } from './data/typography.js';
+import { checkeredPatternMedium } from './data/patterns.js';
 
 // Import PDF generation libraries
 // Ensure these are loaded in your HTML if running outside this environment
 // <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 // <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-// --- Style Guide Colors ---
-const brandColors = {
-    // Functional Tones
-    PrimaryText: '#212121',
-    PrimaryBackground: '#FFFFFF',
-    SecondaryBackground: '#F3F4F6',
-    GrayDark: '#616161',
-    GrayMid: '#9E9E9E',
-    GrayLight: '#E0E0E0',
-    DisabledGray: '#BDBDBD', // Darkened disabled gray
 
-    // Brand Colors (based on user request)
-    PrimaryAccent: '#E31937',      // Primatif Red
-    PrimaryAccentLight: '#E73B54',   // Primatif Red Light
-    PrimaryAccentDark: '#C1152E',    // Primatif Red Dark
-    PrimaryAccentDarker: '#5C0411', // Primatif Red Darker
-    
-    // Updated Blue Palette
-    SecondaryAccent: '#53C8ED',    // New main blue (Primatif Sky Blue)
-    AccentSkyBlue: '#A0DFF2',      // Lighter, adjusted blue
-    AccentDeepBlue: '#0080A4',     // Darker, adjusted blue
-
-    TertiaryAccent: '#08FF08',      // User's Greenscreen Green (for branding)
-    QuaternaryAccent: '#FFC300',    // Retained for semantic warning state
-
-    // Semantic-specific colors
-    SemanticSuccessGreen: '#2E7D32', // Deeper green for success states
-    SemanticSuccessGreenLight: '#E8F5E9',
-};
-
-// --- Pattern Definitions ---
-const checkeredPatternSmall = `url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='0' width='5' height='5' fill='%23e0e0e0'/%3E%3Crect x='5' y='5' width='5' height='5' fill='%23e0e0e0'/%3E%3C/svg%3E")`;
-const checkeredPatternMedium = `url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='0' width='5' height='5' fill='%23e0e0e0'/%3E%3Crect x='5' y='5' width='5' height='5' fill='%23e0e0e0'/%3E%3C/svg%3E")`;
-const checkeredPatternLarge = `url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0' y='0' width='5' height='5' fill='%23e0e0e0'/%3E%3Crect x='5' y='5' width='5' height='5' fill='%23e0e0e0'/%3E%3C/svg%3E")`;
 
 // Helper to convert hex to rgba for tints
 const hexToRgba = (hex, alpha) => {
+    if (!hex || typeof hex !== 'string') {
+        console.warn(`Invalid hex color passed to hexToRgba: ${hex}`);
+        return `rgba(128, 128, 128, ${alpha || 1})`; // Return a neutral gray for invalid input
+    }
     let r = 0, g = 0, b = 0;
     // Handle 3-digit hex
     if (hex.length === 4) {
@@ -62,19 +46,9 @@ const hexToRgba = (hex, alpha) => {
 
 // --- Helper Components for Style Guide Examples ---
 
-const ExampleSection = ({ title, children, commentary }) => (
-    <div className="my-6 p-4 rounded-lg" style={{ backgroundColor: brandColors.PrimaryBackground, border: `1px solid ${brandColors.SecondaryBackground}` }}>
-        <h3 className="text-xl font-bold mb-3 border-b pb-2" style={{ color: brandColors.PrimaryText, borderColor: brandColors.GrayLight }}>{title}</h3>
-        {commentary && <p className="text-sm italic mb-4" style={{color: brandColors.GrayDark}}>{commentary}</p>}
-        {children}
-    </div>
-);
 
-const CodeBlock = ({ children }) => (
-    <pre className="bg-gray-800 text-gray-50 p-3 rounded-md overflow-x-auto text-xs my-2">
-        <code>{children}</code>
-    </pre>
-);
+
+
 
 const ResponsiveDiagramContainer = ({ children, idealWidth = 1200, idealHeight = 675, patternedBackground }) => {
     return (
@@ -151,102 +125,12 @@ const DemoGroup = ({ children, title, borderColor, textColor, bgColor, flexWrap 
     </div>
 );
 
-// Component to display colors in a table
-const ColorDisplayTable = ({ title, description, colors }) => (
-    <div className="mb-8">
-        <h4 className="text-lg font-bold mb-2" style={{ color: brandColors.PrimaryText }}>{title}</h4>
-        {description && <p className="text-sm mb-4" style={{ color: brandColors.PrimaryText }}>{description}</p>}
-        <div className="overflow-x-auto rounded-lg border" style={{ borderColor: brandColors.GrayLight }}>
-            <table className="w-full text-left table-auto border-collapse">
-                <thead>
-                    <tr style={{ backgroundColor: brandColors.SecondaryBackground }}>
-                        <th className="p-3 font-semibold text-sm uppercase" style={{ color: brandColors.PrimaryText }}>Color</th>
-                        <th className="p-3 font-semibold text-sm uppercase" style={{ color: brandColors.PrimaryText }}>Name</th>
-                        <th className="p-3 font-semibold text-sm uppercase" style={{ color: brandColors.PrimaryText }}>Token</th>
-                        <th className="p-3 font-semibold text-sm uppercase" style={{ color: brandColors.PrimaryText }}>Value</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {colors.map(color => (
-                        <tr key={color.token} className="border-b last:border-b-0" style={{ borderColor: brandColors.GrayLight }}>
-                            <td className="p-3">
-                                <div className={`w-full h-8 rounded ${color.border ? 'border' : ''}`} style={{ backgroundColor: color.hex, borderColor: color.border ? brandColors.GrayLight : 'transparent' }}></div>
-                            </td>
-                            <td className="p-3 font-medium" style={{ color: brandColors.PrimaryText }}>{color.name}</td>
-                            <td className="p-3">
-                                <code className="bg-gray-200 text-sm px-2 py-1 rounded" style={{ color: brandColors.PrimaryText }}>{color.token}</code>
-                            </td>
-                             <td className="p-3">
-                                <code className="bg-gray-200 text-sm px-2 py-1 rounded" style={{ color: brandColors.PrimaryText }}>{color.hex}</code>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-    </div>
-);
 
-// Component for Text Color Usage
-const TextColorUsage = () => {
-    const [isHovered, setIsHovered] = React.useState(false);
 
-    return (
-        <div className="mt-6">
-            <h4 className="text-lg font-bold mb-2" style={{ color: brandColors.PrimaryText }}>Text Color Usage</h4>
-            <p className="text-sm mb-4" style={{ color: brandColors.PrimaryText }}>
-                To ensure readability and accessibility, use the following colors for text.
-            </p>
-            <div className="p-4 rounded-lg border" style={{ borderColor: brandColors.GrayLight}}>
-                <div className="mb-3">
-                    <div className="flex items-center mb-1">
-                        <div className="w-4 h-4 rounded-full mr-2" style={{backgroundColor: brandColors.PrimaryText}}></div>
-                        <p style={{color: brandColors.PrimaryText}}><b>Primary Text</b> (<code className="text-xs bg-gray-200 p-1 rounded">PrimaryText</code>) - Use for all headings and body copy.</p>
-                    </div>
-                </div>
-                <div className="mb-3">
-                     <div className="flex items-center mb-1">
-                        <div className="w-4 h-4 rounded-full mr-2" style={{backgroundColor: brandColors.GrayDark}}></div>
-                        <p style={{color: brandColors.GrayDark}}><b>Secondary Text</b> (<code className="text-xs bg-gray-200 p-1 rounded">GrayDark</code>) - Use for secondary information or less important details.</p>
-                    </div>
-                </div>
-                 <div className="mb-3">
-                     <div className="flex items-center mb-1">
-                        <div className="w-4 h-4 rounded-full mr-2" style={{backgroundColor: brandColors.GrayMid}}></div>
-                        <p style={{color: brandColors.GrayMid}}><b>Tertiary/Hint Text</b> (<code className="text-xs bg-gray-200 p-1 rounded">GrayMid</code>) - Use for captions, hints, or placeholder text.</p>
-                    </div>
-                </div>
-                 <div className="mb-3">
-                     <div className="flex items-center mb-1">
-                        <div className="w-4 h-4 rounded-full mr-2 border" style={{backgroundColor: brandColors.DisabledGray, borderColor: brandColors.GrayMid}}></div>
-                        <p style={{color: brandColors.GrayMid}}><b>Disabled Text</b> (<code className="text-xs bg-gray-200 p-1 rounded">DisabledGray</code>) - Use for disabled UI elements.</p>
-                    </div>
-                </div>
-                 <div className="pt-3 mt-3 border-t" style={{borderColor: brandColors.GrayLight}}>
-                     <h5 className="font-bold mb-2" style={{color: brandColors.PrimaryText}}>Links</h5>
-                     <div className="flex items-center">
-                        <div className="w-4 h-4 rounded-full mr-2" style={{backgroundColor: brandColors.PrimaryAccent}}></div>
-                        <a href="#" 
-                           style={{color: isHovered ? brandColors.PrimaryAccentDark : brandColors.PrimaryAccent, textDecoration: 'underline'}}
-                           onMouseEnter={() => setIsHovered(true)}
-                           onMouseLeave={() => setIsHovered(false)}
-                        >
-                            This is an example link.
-                        </a>
-                    </div>
-                    <p className="text-sm mt-1" style={{color: brandColors.GrayDark}}>
-                        Links use <code className="text-xs bg-gray-200 p-1 rounded">PrimaryAccent</code> and darken to <code className="text-xs bg-gray-200 p-1 rounded">PrimaryAccentDark</code> on hover.
-                    </p>
-                </div>
-            </div>
-        </div>
-    );
-};
+
 
 
 const StyleGuideDocument = () => {
-    const contentRef = useRef(null); 
-
     useMemo(() => {
         const robotoLink = document.createElement('link');
         robotoLink.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap';
@@ -264,88 +148,7 @@ const StyleGuideDocument = () => {
         document.head.appendChild(latoLink);
     }, []);
 
-    const handleDownloadPdf = async () => {
-        const element = contentRef.current;
-        if (!element) return;
 
-        if (typeof window.html2canvas === 'undefined' || typeof window.jspdf === 'undefined') {
-            console.error('html2canvas or jspdf not loaded. Please ensure their script tags are present.');
-            alert('PDF generation libraries not loaded. Cannot download PDF.');
-            return;
-        }
-
-        const pdf = new window.jspdf.jsPDF('p', 'pt', 'legal'); 
-        const padding = 40;
-
-        try {
-            const clone = element.cloneNode(true);
-            const downloadButton = clone.querySelector('#download-pdf-button');
-            if (downloadButton) {
-                downloadButton.remove();
-            }
-
-            const canvas = await window.html2canvas(clone, { 
-                scale: 2,
-                useCORS: true, 
-                windowWidth: clone.scrollWidth,
-                windowHeight: clone.scrollHeight, 
-            });
-
-            const imgData = canvas.toDataURL('image/png');
-            const pageHeight = pdf.internal.pageSize.getHeight();
-            const imgHeight = (canvas.height * pdf.internal.pageSize.getWidth()) / canvas.width;
-            let heightLeft = imgHeight;
-            let position = 0;
-
-            pdf.addImage(imgData, 'PNG', 0, position, pdf.internal.pageSize.getWidth(), imgHeight);
-            heightLeft -= pageHeight;
-            
-            while (heightLeft > 0) {
-                position -= pageHeight;
-                pdf.addPage();
-                pdf.addImage(imgData, 'PNG', 0, position, pdf.internal.pageSize.getWidth(), imgHeight);
-                heightLeft -= pageHeight;
-            }
-
-            pdf.save('Primatif_Style_Guide.pdf');
-        } catch (error) {
-            console.error('Error generating PDF:', error);
-            alert('Failed to generate PDF. Please try again.');
-        }
-    };
-    
-    // Data for the color tables
-    const brandColorsData = [
-        { name: 'Primatif Red', token: 'PrimaryAccent', hex: brandColors.PrimaryAccent },
-        { name: 'Primatif Red Light', token: 'PrimaryAccentLight', hex: brandColors.PrimaryAccentLight },
-        { name: 'Primatif Red Dark', token: 'PrimaryAccentDark', hex: brandColors.PrimaryAccentDark },
-        { name: 'Primatif Red Darker', token: 'PrimaryAccentDarker', hex: brandColors.PrimaryAccentDarker },
-        { name: 'Primatif Sky Blue', token: 'SecondaryAccent', hex: brandColors.SecondaryAccent },
-        { name: 'Sky Blue Light', token: 'AccentSkyBlue', hex: brandColors.AccentSkyBlue },
-        { name: 'Deep Blue', token: 'AccentDeepBlue', hex: brandColors.AccentDeepBlue },
-        { name: 'Green Screen Green', token: 'TertiaryAccent', hex: brandColors.TertiaryAccent },
-    ];
-
-    const functionalTonesData = [
-        { name: 'Primary Text', token: 'PrimaryText', hex: brandColors.PrimaryText },
-        { name: 'Gray Dark', token: 'GrayDark', hex: brandColors.GrayDark },
-        { name: 'Gray Mid', token: 'GrayMid', hex: brandColors.GrayMid },
-        { name: 'Gray Light', token: 'GrayLight', hex: brandColors.GrayLight },
-        { name: 'Secondary Background', token: 'SecondaryBackground', hex: brandColors.SecondaryBackground },
-        { name: 'Primary Background', token: 'PrimaryBackground', hex: brandColors.PrimaryBackground, border: true },
-    ];
-    
-    const semanticColorsData = [
-        { name: 'Success Green', token: 'SemanticSuccessGreen', hex: brandColors.SemanticSuccessGreen },
-        { name: 'Success Green Light', token: 'SemanticSuccessGreenLight', hex: brandColors.SemanticSuccessGreenLight },
-        { name: 'Error Red', token: 'ErrorRed', hex: brandColors.PrimaryAccentDark },
-        { name: 'Error Red Light', token: 'ErrorRedLight', hex: '#FFE8EB' },
-        { name: 'Warning Yellow', token: 'WarningYellow', hex: brandColors.QuaternaryAccent },
-        { name: 'Warning Yellow Light', token: 'WarningYellowLight', hex: '#FFF8E1' },
-        { name: 'Info Blue', token: 'InfoBlue', hex: brandColors.SecondaryAccent },
-        { name: 'Info Blue Light', token: 'InfoBlueLight', hex: '#D1EEF9' },
-        { name: 'Disabled Gray', token: 'DisabledGray', hex: brandColors.DisabledGray },
-    ];
 
 
     return (
@@ -357,167 +160,28 @@ const StyleGuideDocument = () => {
                     </div>
                     <div className="flex justify-between items-start mb-4">
                         <div>
-                            <h1 className="text-3xl font-bold" style={{ color: brandColors.PrimaryText, fontFamily: 'Bebas Neue, sans-serif' }}>PRIMATIF BRAND STYLE GUIDE</h1>
-                            <p className="text-lg" style={{ color: brandColors.PrimaryText, fontFamily: 'Lato, sans-serif' }}>
+                            <h1 className="text-3xl font-bold" style={{ ...typography.guideTitle, color: brandColors.PrimaryText }}>PRIMATIF BRAND STYLE GUIDE</h1>
+                            <p className="text-lg" style={{ ...typography.subtitle, color: brandColors.PrimaryText }}>
                                 A guide to our visual identity.
                             </p>
                         </div>
-                        <button
-                            id="download-pdf-button"
-                            onClick={handleDownloadPdf}
-                            className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-gray-300 flex-shrink-0 ml-4"
-                            style={{ backgroundColor: brandColors.GrayLight }}
-                            aria-label="Download as PDF"
-                            title="Download as PDF"
-                        >
-                            <div className="w-2 h-2 rounded-full" style={{backgroundColor: brandColors.GrayDark}}></div>
-                        </button>
                     </div>
                     <p className="text-sm mb-6" style={{ color: brandColors.GrayDark }}>
                         This style guide is the foundation for creating all brand communications. It ensures a consistent, professional, and innovative identity across all mediums. These are not strict rules but a framework to empower creativity while maintaining the reliability our brand stands for. Use this as a guide to make informed design decisions.
                     </p>
 
-                    <div id="style-guide-content" ref={contentRef}>
-                        <ExampleSection title="1. Color Palette" commentary="Our color palette balances professionalism with innovation. The primary colors are bold and confident, while functional tones ensure clarity and readability. Semantic colors provide intuitive user feedback without being distracting.">
-                             <ColorDisplayTable 
-                                title="Brand Colors"
-                                description="The brand colors form the core of our visual identity. They are used for key highlights, important information, and to create a dynamic and recognizable presence."
-                                colors={brandColorsData}
-                            />
-                            <ColorDisplayTable
-                                title="Functional Tones"
-                                description="The functional tones provide the neutral foundation for our documents, ensuring text is readable and the layout is clean and structured."
-                                colors={functionalTonesData}
-                            />
-                            <ColorDisplayTable
-                                title="Semantic Colors"
-                                description="Recommended for use in forms, alerts, or any element meant to communicate a state. Color should never be the only means used to convey state information; it must always be accompanied by text or an icon."
-                                colors={semanticColorsData}
-                            />
-                        </ExampleSection>
+                    <div id="style-guide-content">
+                        <ColorPalette />
 
-                        <ExampleSection title="2. Typography" commentary="Typography is key to our brand voice. Bebas Neue provides a strong, modern feel for headlines, while Roboto ensures body text is highly legible and professional. Lato is used for subtitles and intro text to provide a clean, accessible feel that complements the primary fonts.">
-                             <p className="mb-4" style={{ color: brandColors.PrimaryText }}>We utilize a combination of fonts to establish a clear visual hierarchy and maintain brand consistency.</p>
-                             <h4 className="font-semibold text-lg mb-2">Primary & Logo Font</h4>
-                            <p style={{ fontFamily: 'Bebas Neue, sans-serif', color: brandColors.PrimaryText, fontSize: '3rem', fontWeight: 'normal', letterSpacing: '0.05em' }}>PRIMATIF</p>
-                            <div className="text-sm mb-4" style={{ color: brandColors.PrimaryText }}>
-                                <strong style={{ color: brandColors.PrimaryAccent }}>Bebas Neue:</strong> Used for the "PRIMATIF" logo and major section headers.
-                                <CodeBlock>{`font-family: 'Bebas Neue', sans-serif;`}</CodeBlock>
-                            </div>
-                            <h4 className="font-semibold text-lg mt-6 mb-2">Headings</h4>
-                            <p style={{ fontFamily: 'Roboto, sans-serif', color: brandColors.PrimaryText, fontSize: '2.25rem', fontWeight: '700' }}>Heading 1 - Roboto Bold</p>
-                            <p style={{ fontFamily: 'Roboto, sans-serif', color: brandColors.PrimaryText, fontSize: '1.5rem', fontWeight: '700' }}>Heading 2 - Roboto Bold</p>
-                            <p style={{ fontFamily: 'Roboto, sans-serif', color: brandColors.PrimaryText, fontSize: '1.25rem', fontWeight: '700' }}>Heading 3 - Roboto Bold</p>
-                            <CodeBlock>{`font-family: 'Roboto', sans-serif; font-weight: 700;`}</CodeBlock>
-                             <h4 className="font-semibold text-lg mt-6 mb-2">Body & Subtitle Copy</h4>
-                             <p style={{ fontFamily: 'Lato, sans-serif', color: brandColors.GrayDark, fontSize: '1.125rem' }}>This is Lato, used for subtitles and introductory text.</p>
-                            <p className="mt-2" style={{ fontFamily: 'Roboto, sans-serif', color: brandColors.PrimaryText, fontSize: '1rem', fontWeight: '400' }}>
-                                This is Roboto, our primary font for all paragraph text, ensuring readability and a clean, professional appearance.
-                            </p>
-                             <CodeBlock>{`font-family: 'Lato', sans-serif; /* For subtitles */ \nfont-family: 'Roboto', sans-serif; /* For body text */`}</CodeBlock>
-                            <TextColorUsage />
-                        </ExampleSection>
+                        <Typography />
 
-                        <ExampleSection title="3. Headers & Footers" commentary="These components bookend our documents, providing a consistent brand frame. The header is clean and professional, while the footer offers essential contact information in a compact, unobtrusive manner.">
-                            <p className="mb-4" style={{ color: brandColors.PrimaryText }}>Headers and Footers provide consistent branding and navigation across all documents.</p>
-                            <div className="mb-6">
-                                <h4 className="font-semibold text-lg mb-2">Standard Header</h4>
-                                <div className="p-4 flex justify-between items-center rounded-lg" style={{border: `1px solid ${brandColors.GrayLight}`}}>
-                                    <div className="font-bold text-2xl" style={{ color: brandColors.PrimaryText, fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.05em' }}>PRIMATIF</div>
-                                    <div className="text-sm" style={{color: brandColors.GrayMid}}>Document Title</div>
-                                </div>
-                            </div>
-                             <div>
-                                <h4 className="font-semibold text-lg mb-2">Standard Footer</h4>
-                                <div className="p-4 text-center rounded-lg" style={{backgroundColor: brandColors.GrayDark, color: brandColors.PrimaryBackground}}>
-                                    <div className="font-bold text-lg" style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.05em' }}>PRIMATIF</div>
-                                    <p className="text-xs mt-1" style={{color: brandColors.GrayLight}}> 2025 Primatif | hello@primatif.com</p>
-                                </div>
-                            </div>
-                        </ExampleSection>
+                        <HeadersAndFooters />
 
-                        <ExampleSection title="4. Buttons" commentary="Button styles are designed to create a clear visual hierarchy for user actions. The primary button should be used for the most important action on a page, while secondary and destructive buttons offer clear alternatives.">
-                            <p className="mb-4" style={{ color: brandColors.PrimaryText }}>Buttons are used for primary actions, secondary options, and destructive operations.</p>
-                             <div className="flex flex-wrap items-center gap-4">
-                                <div>
-                                    <button className="px-5 py-2 rounded-lg text-white font-semibold shadow-md" style={{backgroundColor: brandColors.SecondaryAccent}}>Primary Action</button>
-                                    <p className="text-xs text-center mt-2" style={{color: brandColors.GrayDark}}>Used for the main call to action.</p>
-                                </div>
-                                 <div>
-                                    <button className="px-5 py-2 rounded-lg font-semibold border" style={{color: brandColors.PrimaryText, borderColor: brandColors.GrayMid}}>Secondary Action</button>
-                                    <p className="text-xs text-center mt-2" style={{color: brandColors.GrayDark}}>Used for alternative, less critical actions.</p>
-                                </div>
-                                 <div>
-                                    <button className="px-5 py-2 rounded-lg text-white font-semibold shadow-md" style={{backgroundColor: brandColors.PrimaryAccent}}>Destructive Action</button>
-                                    <p className="text-xs text-center mt-2" style={{color: brandColors.GrayDark}}>Used for actions that cannot be undone.</p>
-                                </div>
-                            </div>
-                        </ExampleSection>
+                        <Buttons />
 
-                        <ExampleSection title="5. Patterns & Backgrounds" commentary="Subtle patterns can add texture and visual interest to otherwise plain backgrounds. The different sizes allow for flexibility, from a fine texture on a small card to a more noticeable pattern on a large hero section.">
-                            <p className="mb-4" style={{ color: brandColors.PrimaryText }}>A subtle checkered pattern can be used as an overlay on light backgrounds to add texture. It is available in multiple sizes for different visual effects.</p>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div className="h-48 rounded-lg border border-gray-300 flex items-center justify-center text-sm flex-col" style={{ backgroundImage: checkeredPatternSmall, backgroundSize: '10px 10px' }}>
-                                    <span className="bg-white/80 px-2 py-1 rounded">Small Pattern</span>
-                                </div>
-                                 <div className="h-48 rounded-lg border border-gray-300 flex items-center justify-center text-sm flex-col" style={{ backgroundImage: checkeredPatternMedium, backgroundSize: '25px 25px' }}>
-                                    <span className="bg-white/80 px-2 py-1 rounded">Medium Pattern</span>
-                                </div>
-                                 <div className="h-48 rounded-lg border border-gray-300 flex items-center justify-center text-sm flex-col" style={{ backgroundImage: checkeredPatternLarge, backgroundSize: '50px 50px' }}>
-                                    <span className="bg-white/80 px-2 py-1 rounded">Large Pattern</span>
-                                </div>
-                            </div>
-                        </ExampleSection>
+                        <PatternsAndBackgrounds />
 
-                        <ExampleSection title="6. Table Formatting" commentary="Our table style prioritizes readability. A strong header color provides a clear starting point, while subtle row highlighting guides the eye. Semantic colors can be used within cells to draw attention to specific data points.">
-                            <p className="mb-4" style={{ color: brandColors.PrimaryText }}>Tables are powerful tools for presenting structured data. Use color and formatting to create visual hierarchy and convey information clearly. Rows or cells can be styled to highlight status or importance.</p>
-                            <div className="overflow-x-auto rounded-lg border" style={{ borderColor: brandColors.PrimaryText }}>
-                                <table className="w-full text-left table-auto border-collapse">
-                                    <thead>
-                                        <tr style={{ backgroundColor: brandColors.AccentDeepBlue, color: brandColors.PrimaryBackground }}>
-                                            <th className="p-3 font-semibold text-sm uppercase">Item</th>
-                                            <th className="p-3 font-semibold text-sm uppercase">Status</th>
-                                            <th className="p-3 font-semibold text-sm uppercase">Owner</th>
-                                            <th className="p-3 font-semibold text-sm uppercase">Due Date</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="text-sm">
-                                        <tr className="border-b" style={{ borderColor: brandColors.GrayLight }}>
-                                            <td className="p-3" style={{color: brandColors.PrimaryText }}>Initial Project Setup</td>
-                                            <td className="p-3">
-                                                <span className="inline-block px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: brandColors.SemanticSuccessGreenLight, color: brandColors.SemanticSuccessGreen }}> Complete</span>
-                                            </td>
-                                            <td className="p-3" style={{color: brandColors.GrayDark }}>Tech Lead</td>
-                                            <td className="p-3" style={{color: brandColors.GrayDark }}>2025-06-15</td>
-                                        </tr>
-                                         <tr className="border-b" style={{ backgroundColor: '#FFF8E1', borderColor: brandColors.GrayLight }}>
-                                            <td className="p-3 font-medium" style={{color: brandColors.PrimaryText }}>API Key Provisioning</td>
-                                            <td className="p-3">
-                                                <span className="inline-block px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: brandColors.QuaternaryAccent, color: brandColors.PrimaryText }}> In Progress</span>
-                                            </td>
-                                            <td className="p-3" style={{color: brandColors.GrayDark }}>Client IT</td>
-                                            <td className="p-3" style={{color: brandColors.GrayDark }}>2025-06-22</td>
-                                        </tr>
-                                         <tr className="border-b" style={{ backgroundColor: '#FFE8EB', borderColor: brandColors.GrayLight }}>
-                                            <td className="p-3 font-bold" style={{color: brandColors.PrimaryAccentDark }}>Database Credentials Update</td>
-                                            <td className="p-3">
-                                                <span className="inline-block px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: brandColors.PrimaryAccentDark, color: brandColors.PrimaryBackground }}> Blocked</span>
-                                            </td>
-                                            <td className="p-3 font-bold" style={{color: brandColors.PrimaryAccentDark }}>Tech Lead</td>
-                                            <td className="p-3 font-bold" style={{color: brandColors.PrimaryAccentDark }}>2025-06-20</td>
-                                        </tr>
-                                        <tr className="border-b" style={{ borderColor: brandColors.GrayLight }}>
-                                            <td className="p-3" style={{color: brandColors.PrimaryText }}>User Interface Mockups</td>
-                                            <td className="p-3">
-                                                <span className="inline-block px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#D1EEF9', color: brandColors.GrayDark }}> Pending Review</span>
-                                            </td>
-                                            <td className="p-3" style={{color: brandColors.GrayDark }}>Design Team</td>
-                                            <td className="p-3" style={{color: brandColors.GrayDark }}>2025-06-25</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </ExampleSection>
+                        <TableFormatting />
                         
                         <ExampleSection title="7. Component Examples" commentary="Architectural diagrams are a key part of our technical documentation. These components provide a standardized set of shapes and styles to ensure that all diagrams are consistent, professional, and easy to understand.">
                             <h4 className="font-semibold text-lg mb-3" style={{ color: brandColors.PrimaryText }}>Diagram Elements</h4>
@@ -533,7 +197,7 @@ const StyleGuideDocument = () => {
                                     </DemoGroup>
                                     <DemoArrow label="Connects" direction="r" arrowColor={brandColors.PrimaryAccent} />
                                     <DemoBox title="Database" bgColor={brandColors.PrimaryBackground} borderColor={brandColors.PrimaryText} textColor={brandColors.PrimaryText}>
-                                        <DemoNode bgColor={hexToRgba(brandColors.QuaternaryAccent, 0.1)} borderColor={brandColors.QuaternaryAccent} textColor={brandColors.PrimaryText} icon=" ">Azure DB</DemoNode>
+                                        <DemoNode bgColor={hexToRgba(brandColors.WarningYellow, 0.1)} borderColor={brandColors.WarningYellow} textColor={brandColors.PrimaryText} icon=" ">Azure DB</DemoNode>
                                     </DemoBox>
                                 </div>
                             </ResponsiveDiagramContainer>
@@ -580,9 +244,9 @@ const StyleGuideDocument = () => {
                                         <h5 className="font-medium mb-2 text-gray-600">Proposal Cover</h5>
                                         <div className="p-8 shadow-lg" style={{border: `1px solid ${brandColors.GrayLight}`}}>
                                             <div className="text-center">
-                                                <div className="font-bold text-4xl mb-4" style={{ color: brandColors.PrimaryText, fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.05em' }}>PRIMATIF</div>
-                                                <h1 className="text-4xl font-bold mb-2" style={{fontFamily: 'Roboto, sans-serif'}}>Enterprise Cloud Migration Strategy</h1>
-                                                <p className="text-lg mb-8" style={{color: brandColors.GrayDark, fontFamily: 'Lato, sans-serif'}}>Prepared for: Acme Corporation</p>
+                                                <div className="font-bold text-4xl mb-4" style={{ ...typography.mainTitle, color: brandColors.PrimaryText }}>PRIMATIF</div>
+                                                <h1 className="text-4xl font-bold mb-4" style={{ ...typography.mainTitle, color: brandColors.PrimaryText }}>Enterprise Cloud Migration Strategy</h1>
+                                                <p className="text-lg mb-8" style={{ ...typography.bodyText, color: brandColors.GrayDark }}>Prepared for: Acme Corporation</p>
                                                  <div className="w-1/2 h-1 mx-auto" style={{backgroundColor: brandColors.PrimaryAccent}}></div>
                                                 <p className="text-sm mt-8" style={{color: brandColors.GrayMid}}>June 20, 2025</p>
                                             </div>
@@ -593,11 +257,11 @@ const StyleGuideDocument = () => {
                                          <h5 className="font-medium mb-2 text-gray-600">Internal Report Page</h5>
                                         <div className="p-8 shadow-lg" style={{border: `1px solid ${brandColors.GrayLight}`}}>
                                             <div className="p-4 flex justify-between items-center border-b" style={{borderColor: brandColors.GrayLight}}>
-                                                <div className="font-bold text-2xl" style={{ color: brandColors.PrimaryText, fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.05em' }}>PRIMATIF</div>
+                                                <div className="font-bold text-2xl" style={{ ...typography.headerLogo, color: brandColors.PrimaryText }}>PRIMATIF</div>
                                                 <div className="text-sm" style={{color: brandColors.GrayMid}}>Q2 Performance Review</div>
                                             </div>
                                             <div className="py-8">
-                                                 <h2 className="text-xl font-bold mb-4 text-gray-700" style={{fontFamily: 'Roboto, sans-serif'}}>Project Status Overview</h2>
+                                                 <h2 className="text-xl font-bold mb-4 text-gray-700" style={{...typography.subSectionTitle}}>Project Status Overview</h2>
                                                  <p className="text-sm mb-4">This table summarizes the current status of all active projects for the second quarter.</p>
                                                   <div className="overflow-x-auto rounded-lg border" style={{ borderColor: brandColors.PrimaryText }}>
                                                     <table className="w-full text-left table-auto border-collapse">
@@ -648,11 +312,11 @@ const StyleGuideDocument = () => {
                                          <h5 className="font-medium mb-2 text-gray-600">Technical Whitepaper Page</h5>
                                         <div className="p-8 shadow-lg" style={{border: `1px solid ${brandColors.GrayLight}`}}>
                                              <div className="p-4 flex justify-between items-center border-b" style={{borderColor: brandColors.GrayLight}}>
-                                                <div className="font-bold text-2xl" style={{ color: brandColors.PrimaryText, fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.05em' }}>PRIMATIF</div>
+                                                <div className="font-bold text-2xl" style={{ ...typography.headerLogo, color: brandColors.PrimaryText }}>PRIMATIF</div>
                                                 <div className="text-sm" style={{color: brandColors.GrayMid}}>Technical Whitepaper</div>
                                             </div>
                                             <div className="py-8">
-                                                <h2 className="text-xl font-bold mb-2 text-gray-700" style={{fontFamily: 'Roboto, sans-serif'}}>3. Implementing Secure API Endpoints</h2>
+                                                <h2 className="text-xl font-bold mb-2 text-gray-700" style={{...typography.subSectionTitle}}>3. Implementing Secure API Endpoints</h2>
                                                 <p className="text-base mb-4">The following code demonstrates a basic secure endpoint using Python and Flask. Note the use of the <code className="bg-gray-200 text-sm px-1 rounded">@jwt_required()</code> decorator to protect the route.</p>
                                                 <CodeBlock>
 {`from flask import Flask
@@ -681,7 +345,7 @@ def get_data():
                                         <div className="rounded-lg shadow-lg" style={{backgroundColor: brandColors.SecondaryBackground, border: `1px solid ${brandColors.GrayLight}`}}>
                                             <div className="flex h-96">
                                                 <div className="w-1/4 p-4 border-r" style={{backgroundColor: brandColors.PrimaryBackground, borderColor: brandColors.GrayLight}}>
-                                                    <div className="font-bold text-xl mb-6" style={{ color: brandColors.PrimaryText, fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.05em' }}>PRIMATIF AI</div>
+                                                    <div className="font-bold text-xl mb-6" style={{ ...typography.appLogo, color: brandColors.PrimaryText }}>PRIMATIF AI</div>
                                                     <nav><ul>
                                                         <li className="mb-3"><a href="#" className="font-semibold rounded-md p-2 block" style={{backgroundColor: hexToRgba(brandColors.SecondaryAccent, 0.2), color: brandColors.AccentDeepBlue}}>New Chat</a></li>
                                                         <li className="mb-3"><a href="#" className="font-semibold p-2 block" style={{color: brandColors.GrayDark}}>History</a></li>
