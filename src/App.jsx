@@ -1,4 +1,5 @@
 import React, { useMemo, useRef, useState } from 'react';
+import tanishLogo from '../images/logo_tanish.png';
 
 // Import PDF generation libraries
 // Ensure these are loaded in your HTML if running outside this environment
@@ -17,10 +18,10 @@ const brandColors = {
     DisabledGray: '#BDBDBD', // Darkened disabled gray
 
     // Brand Colors (based on user request)
-    PrimaryAccent: '#E31937',      // JPL Red
-    PrimaryAccentLight: '#E73B54',   // JPL Red Light
-    PrimaryAccentDark: '#C1152E',    // JPL Red Dark
-    PrimaryAccentDarker: '#5C0411', // JPL Red Darker
+    PrimaryAccent: '#E31937',      // Primatif Red
+    PrimaryAccentLight: '#E73B54',   // Primatif Red Light
+    PrimaryAccentDark: '#C1152E',    // Primatif Red Dark
+    PrimaryAccentDarker: '#5C0411', // Primatif Red Darker
     
     // Updated Blue Palette
     SecondaryAccent: '#53C8ED',    // New main blue (Primatif Sky Blue)
@@ -351,14 +352,14 @@ const StyleGuideDocument = () => {
         <div className="min-h-screen p-4 sm:p-6 lg:p-8" style={{ backgroundColor: brandColors.PrimaryBackground }}>
             <div className="max-w-7xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
                 <div className="p-6 sm:p-8">
-                    <div className="flex justify-between items-start">
+                    <div className="text-center mb-6 border-b pb-6" style={{ borderColor: brandColors.GrayLight }}>
+                        <img src={tanishLogo} alt="Primatif Logo" className="h-24 w-auto inline-block" />
+                    </div>
+                    <div className="flex justify-between items-start mb-4">
                         <div>
-                            <h1 className="text-3xl font-bold mb-2" style={{ color: brandColors.PrimaryText, fontFamily: 'Bebas Neue, sans-serif' }}>PRIMATIF BRAND STYLE GUIDE</h1>
-                             <p className="text-lg mb-2" style={{ color: brandColors.PrimaryText, fontFamily: 'Lato, sans-serif' }}>
+                            <h1 className="text-3xl font-bold" style={{ color: brandColors.PrimaryText, fontFamily: 'Bebas Neue, sans-serif' }}>PRIMATIF BRAND STYLE GUIDE</h1>
+                            <p className="text-lg" style={{ color: brandColors.PrimaryText, fontFamily: 'Lato, sans-serif' }}>
                                 A guide to our visual identity.
-                            </p>
-                            <p className="text-sm" style={{ color: brandColors.GrayDark }}>
-                                This style guide is the foundation for creating all brand communications. It ensures a consistent, professional, and innovative identity across all mediums. These are not strict rules but a framework to empower creativity while maintaining the reliability our brand stands for. Use this as a guide to make informed design decisions.
                             </p>
                         </div>
                         <button
@@ -372,6 +373,9 @@ const StyleGuideDocument = () => {
                             <div className="w-2 h-2 rounded-full" style={{backgroundColor: brandColors.GrayDark}}></div>
                         </button>
                     </div>
+                    <p className="text-sm mb-6" style={{ color: brandColors.GrayDark }}>
+                        This style guide is the foundation for creating all brand communications. It ensures a consistent, professional, and innovative identity across all mediums. These are not strict rules but a framework to empower creativity while maintaining the reliability our brand stands for. Use this as a guide to make informed design decisions.
+                    </p>
 
                     <div id="style-guide-content" ref={contentRef}>
                         <ExampleSection title="1. Color Palette" commentary="Our color palette balances professionalism with innovation. The primary colors are bold and confident, while functional tones ensure clarity and readability. Semantic colors provide intuitive user feedback without being distracting.">
@@ -427,7 +431,7 @@ const StyleGuideDocument = () => {
                                 <h4 className="font-semibold text-lg mb-2">Standard Footer</h4>
                                 <div className="p-4 text-center rounded-lg" style={{backgroundColor: brandColors.GrayDark, color: brandColors.PrimaryBackground}}>
                                     <div className="font-bold text-lg" style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.05em' }}>PRIMATIF</div>
-                                    <p className="text-xs mt-1" style={{color: brandColors.GrayLight}}>© {new Date().getFullYear()} Primatif | hello@primatif.com</p>
+                                    <p className="text-xs mt-1" style={{color: brandColors.GrayLight}}> 2025 Primatif | hello@primatif.com</p>
                                 </div>
                             </div>
                         </ExampleSection>
@@ -481,7 +485,7 @@ const StyleGuideDocument = () => {
                                         <tr className="border-b" style={{ borderColor: brandColors.GrayLight }}>
                                             <td className="p-3" style={{color: brandColors.PrimaryText }}>Initial Project Setup</td>
                                             <td className="p-3">
-                                                <span className="inline-block px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: brandColors.SemanticSuccessGreenLight, color: brandColors.SemanticSuccessGreen }}>✅ Complete</span>
+                                                <span className="inline-block px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: brandColors.SemanticSuccessGreenLight, color: brandColors.SemanticSuccessGreen }}> Complete</span>
                                             </td>
                                             <td className="p-3" style={{color: brandColors.GrayDark }}>Tech Lead</td>
                                             <td className="p-3" style={{color: brandColors.GrayDark }}>2025-06-15</td>
@@ -489,7 +493,7 @@ const StyleGuideDocument = () => {
                                          <tr className="border-b" style={{ backgroundColor: '#FFF8E1', borderColor: brandColors.GrayLight }}>
                                             <td className="p-3 font-medium" style={{color: brandColors.PrimaryText }}>API Key Provisioning</td>
                                             <td className="p-3">
-                                                <span className="inline-block px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: brandColors.QuaternaryAccent, color: brandColors.PrimaryText }}>⚠️ In Progress</span>
+                                                <span className="inline-block px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: brandColors.QuaternaryAccent, color: brandColors.PrimaryText }}> In Progress</span>
                                             </td>
                                             <td className="p-3" style={{color: brandColors.GrayDark }}>Client IT</td>
                                             <td className="p-3" style={{color: brandColors.GrayDark }}>2025-06-22</td>
@@ -497,7 +501,7 @@ const StyleGuideDocument = () => {
                                          <tr className="border-b" style={{ backgroundColor: '#FFE8EB', borderColor: brandColors.GrayLight }}>
                                             <td className="p-3 font-bold" style={{color: brandColors.PrimaryAccentDark }}>Database Credentials Update</td>
                                             <td className="p-3">
-                                                <span className="inline-block px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: brandColors.PrimaryAccentDark, color: brandColors.PrimaryBackground }}>❌ Blocked</span>
+                                                <span className="inline-block px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: brandColors.PrimaryAccentDark, color: brandColors.PrimaryBackground }}> Blocked</span>
                                             </td>
                                             <td className="p-3 font-bold" style={{color: brandColors.PrimaryAccentDark }}>Tech Lead</td>
                                             <td className="p-3 font-bold" style={{color: brandColors.PrimaryAccentDark }}>2025-06-20</td>
@@ -505,7 +509,7 @@ const StyleGuideDocument = () => {
                                         <tr className="border-b" style={{ borderColor: brandColors.GrayLight }}>
                                             <td className="p-3" style={{color: brandColors.PrimaryText }}>User Interface Mockups</td>
                                             <td className="p-3">
-                                                <span className="inline-block px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#D1EEF9', color: brandColors.GrayDark }}>ℹ️ Pending Review</span>
+                                                <span className="inline-block px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#D1EEF9', color: brandColors.GrayDark }}> Pending Review</span>
                                             </td>
                                             <td className="p-3" style={{color: brandColors.GrayDark }}>Design Team</td>
                                             <td className="p-3" style={{color: brandColors.GrayDark }}>2025-06-25</td>
@@ -521,15 +525,15 @@ const StyleGuideDocument = () => {
                             <ResponsiveDiagramContainer idealWidth={600} idealHeight={200} patternedBackground={true}>
                                 <div className="flex items-center justify-center w-full flex-nowrap gap-1">
                                     <DemoBox title="Users" bgColor={brandColors.PrimaryBackground} borderColor={brandColors.PrimaryText} textColor={brandColors.PrimaryText}>
-                                        <DemoNode bgColor={hexToRgba(brandColors.PrimaryAccent, 0.1)} borderColor={brandColors.PrimaryAccent} textColor={brandColors.PrimaryText} icon="👤">End User</DemoNode>
+                                        <DemoNode bgColor={hexToRgba(brandColors.PrimaryAccent, 0.1)} borderColor={brandColors.PrimaryAccent} textColor={brandColors.PrimaryText} icon=" ">End User</DemoNode>
                                     </DemoBox>
                                     <DemoArrow label="Data Flow" direction="r" arrowColor={brandColors.PrimaryAccent} />
                                     <DemoGroup title="API Layer" bgColor={hexToRgba(brandColors.SecondaryAccent, 0.1)} borderColor={brandColors.SecondaryAccent} textColor={brandColors.PrimaryText}>
-                                        <DemoNode bgColor={hexToRgba(brandColors.SecondaryAccent, 0.1)} borderColor={brandColors.SecondaryAccent} textColor={brandColors.PrimaryText} icon="🛡️">Secure API</DemoNode>
+                                        <DemoNode bgColor={hexToRgba(brandColors.SecondaryAccent, 0.1)} borderColor={brandColors.SecondaryAccent} textColor={brandColors.PrimaryText} icon=" ">Secure API</DemoNode>
                                     </DemoGroup>
                                     <DemoArrow label="Connects" direction="r" arrowColor={brandColors.PrimaryAccent} />
                                     <DemoBox title="Database" bgColor={brandColors.PrimaryBackground} borderColor={brandColors.PrimaryText} textColor={brandColors.PrimaryText}>
-                                        <DemoNode bgColor={hexToRgba(brandColors.QuaternaryAccent, 0.1)} borderColor={brandColors.QuaternaryAccent} textColor={brandColors.PrimaryText} icon="🗄️">Azure DB</DemoNode>
+                                        <DemoNode bgColor={hexToRgba(brandColors.QuaternaryAccent, 0.1)} borderColor={brandColors.QuaternaryAccent} textColor={brandColors.PrimaryText} icon=" ">Azure DB</DemoNode>
                                     </DemoBox>
                                 </div>
                             </ResponsiveDiagramContainer>
