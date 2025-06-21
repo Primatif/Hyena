@@ -65,11 +65,12 @@ const generatePdf = async () => {
             path: pdfPath,
             format: 'A4',
             printBackground: true,
+            scale: 0.7,
             margin: {
-                top: '40px',
-                right: '40px',
-                bottom: '40px',
-                left: '40px'
+                top: '20px',
+                right: '20px',
+                bottom: '20px',
+                left: '20px'
             }
         });
 

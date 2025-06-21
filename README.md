@@ -2,7 +2,9 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&family=Lato:wght@400&display=swap" rel="stylesheet">
 
-A modern, interactive digital style guide built with React and Vite. This application serves as the comprehensive visual identity reference for the Primatif brand, providing designers and developers with color palettes, typography guidelines, component examples, and usage patterns.
+This style guide is the foundation for all brand communications. Much like component libraries such as **Storybook.js** or UI frameworks provide reusable building blocks for developers, this guide serves a similar purpose for both **humans and AI**, ensuring a consistent and professional identity across all mediums.
+
+For designers and developers, it offers a clear set of rules and examples to ensure consistency across all manually created assets. For **generative AI**, this guide acts as a structured source of truth. By referencing the defined tokens, patterns, and component snippets, AI systems can create a wide range of visually consistent, on-brand graphics, from UI mockups to marketing materials.
 
 ## Brand Identity
 
@@ -262,6 +264,16 @@ npm run build
 
 The built files will be in the `dist/` directory, ready for deployment.
 
+### PDF Generation
+
+This project includes a script to generate a versioned, print-ready PDF of the entire style guide. This is useful for offline sharing, documentation, and archival purposes.
+
+```bash
+npm run generate-pdf
+```
+
+The script will build the project, launch a headless browser, and save a scaled-down PDF to the `output/style-guide/` directory. Each generated file is automatically versioned (e.g., `primatif-style-guide-v1.pdf`).
+
 ## Tech Stack
 
 - **React 19** - Modern React with latest features
@@ -296,6 +308,7 @@ config/
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
+- `npm run generate-pdf` - Generate a PDF of the style guide
 - `npm run preview` - Preview production build locally
 - `npm run lint` - Run ESLint
 

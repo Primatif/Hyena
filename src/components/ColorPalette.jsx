@@ -5,7 +5,7 @@ import { brandColorsData, functionalTonesData, semanticColorsData } from '../dat
 
 const ColorPalette = () => (
     <ExampleSection 
-        title="1. Color Palette" 
+        title="Color Palette" 
         commentary="Our color palette balances professionalism with innovation. The primary colors are bold and confident, while functional tones ensure clarity and readability. Semantic colors provide intuitive user feedback without being distracting."
     >
         <ColorDisplayTable 

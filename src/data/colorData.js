@@ -7,7 +7,6 @@ export const brandColorsData = [
     { name: 'Primatif Sky Blue', token: 'SecondaryAccent', hex: brandColors.SecondaryAccent },
     { name: 'Sky Blue Light', token: 'AccentSkyBlue', hex: brandColors.AccentSkyBlue },
     { name: 'Deep Blue', token: 'AccentDeepBlue', hex: brandColors.AccentDeepBlue },
-    { name: 'Green Screen Green', token: 'TertiaryAccent', hex: brandColors.TertiaryAccent },
 ];
 
 export const functionalTonesData = [

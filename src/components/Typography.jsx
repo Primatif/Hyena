@@ -7,7 +7,7 @@ import TextColorUsage from './TextColorUsage.jsx';
 
 const Typography = () => (
     <ExampleSection 
-        title="2. Typography" 
+        title="Typography" 
         commentary="Typography is key to our brand voice. Bebas Neue provides a strong, modern feel for headlines, while Roboto ensures body text is highly legible and professional. Lato is used for subtitles and intro text to provide a clean, accessible feel that complements the primary fonts."
     >
         <p className="mb-4" style={{ color: brandColors.PrimaryText }}>We utilize a combination of fonts to establish a clear visual hierarchy and maintain brand consistency.</p>
