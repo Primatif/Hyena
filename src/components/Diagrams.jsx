@@ -1,6 +1,6 @@
 import React from 'react';
 import { brandColors } from '../data/colors.js';
-import { checkeredPatternMedium } from '../data/patterns.js';
+import { patterns, patternSizes } from '../data/patterns.js';
 import ExampleSection from './ExampleSection.jsx';
 import { WithSnippet } from './WithSnippet.jsx';
 import { hexToRgba } from '../data/utils.js';
@@ -11,8 +11,8 @@ const ResponsiveDiagramContainer = ({ children, idealWidth = 1200, idealHeight =
              paddingTop: `${(idealHeight / idealWidth) * 100}%`,
              backgroundColor: brandColors.SecondaryBackground,
              ...(patternedBackground && {
-                 backgroundImage: checkeredPatternMedium,
-                 backgroundSize: '25px 25px',
+                 backgroundImage: patterns.subtle,
+                 backgroundSize: patternSizes.medium,
                  backgroundBlendMode: 'overlay',
                  opacity: 0.95
              })
