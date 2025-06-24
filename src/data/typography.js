@@ -1,89 +1,123 @@
 export const fonts = {
-    heading: 'Bebas Neue, sans-serif',
-    body: 'Roboto, sans-serif',
-    subtitle: 'Lato, sans-serif',
+    heading: '"Bebas Neue", sans-serif',
+    body: '"Lato", sans-serif',
+    subtitle: '"Lato", sans-serif',
     code: 'monospace',
 };
 
+export const fontSizes = {
+    xs: '0.75rem',    // 12px
+    sm: '0.875rem',   // 14px
+    base: '1rem',      // 16px
+    lg: '1.125rem',   // 18px
+    xl: '1.25rem',    // 20px
+    '2xl': '1.5rem',   // 24px
+    '3xl': '1.875rem', // 30px
+    '4xl': '2.25rem',  // 36px
+    '5xl': '3rem',     // 48px
+};
+
+export const fontWeights = {
+    regular: '400',
+    bold: '700',
+};
+
 export const typography = {
-    // Main page titles
-    mainTitle: {
+    // General heading styles
+    h1: {
         fontFamily: fonts.heading,
-        fontSize: '2.25rem', // text-4xl
-        fontWeight: 'bold',
+        fontSize: fontSizes['5xl'],
+        fontWeight: fontWeights.bold,
         letterSpacing: '0.05em',
+        marginBottom: '1rem',
     },
-    // Section headers in ExampleSection
-    sectionHeader: {
+    h2: {
         fontFamily: fonts.heading,
-        fontSize: '1.875rem', // text-3xl
+        fontSize: fontSizes['4xl'],
+        fontWeight: fontWeights.bold,
         letterSpacing: '0.05em',
+        marginBottom: '0.75rem',
     },
-    // Logo in Typography section
-    logo: {
+    h3: {
         fontFamily: fonts.heading,
-        fontSize: '3rem',
-        fontWeight: 'normal',
+        fontSize: fontSizes['2xl'],
+        fontWeight: fontWeights.bold,
         letterSpacing: '0.05em',
+        marginBottom: '0.5rem',
     },
-    // Logo in Header component
-    headerLogo: {
+    h4: {
         fontFamily: fonts.heading,
-        fontSize: '1.5rem', // text-2xl
-        fontWeight: 'bold',
+        fontSize: fontSizes.xl,
+        fontWeight: fontWeights.bold,
         letterSpacing: '0.05em',
+        marginBottom: '0.5rem',
     },
-    // Logo in Footer component
-    footerLogo: {
+    h5: {
         fontFamily: fonts.heading,
-        fontSize: '1.125rem', // text-lg
-        fontWeight: 'bold',
+        fontSize: fontSizes.lg,
+        fontWeight: fontWeights.bold,
         letterSpacing: '0.05em',
+        marginBottom: '0.5rem',
     },
-    // Headings in Typography section
-    pageTitle: {
-        fontFamily: fonts.body,
-        fontSize: '2.25rem',
-        fontWeight: 'bold',
+    h6: {
+        fontFamily: fonts.heading,
+        fontSize: fontSizes.base,
+        fontWeight: fontWeights.bold,
+        letterSpacing: '0.05em',
+        marginBottom: '0.5rem',
     },
-    sectionTitle: {
-        fontFamily: fonts.body,
-        fontSize: '1.5rem',
-        fontWeight: 'bold',
-    },
-    subSectionTitle: {
-        fontFamily: fonts.body,
-        fontSize: '1.25rem',
-        fontWeight: 'bold',
-    },
-    // Body and subtitle text
+
+    // General text styles
     body: {
         fontFamily: fonts.body,
-        fontSize: '1rem',
-        fontWeight: '400',
+        fontSize: fontSizes.base,
+        fontWeight: fontWeights.regular,
     },
     subtitle: {
         fontFamily: fonts.subtitle,
-        fontSize: '1.125rem',
-        fontWeight: '400',
+        fontSize: fontSizes.lg,
+        fontWeight: fontWeights.regular,
     },
-    // Code blocks
     code: {
         fontFamily: fonts.code,
-        fontSize: '0.875rem', // text-sm
+        fontSize: fontSizes.sm,
     },
-    // Main style guide title
+
+    // Specific application styles
     guideTitle: {
         fontFamily: fonts.heading,
-        fontSize: '1.875rem', // text-3xl
-        fontWeight: 'bold',
+        fontSize: fontSizes['3xl'],
+        fontWeight: fontWeights.bold,
         letterSpacing: '0.05em',
     },
-    // Logo in App examples
     appLogo: {
         fontFamily: fonts.heading,
-        fontSize: '1.25rem', // text-xl
-        fontWeight: 'bold',
+        fontSize: fontSizes.xl,
+        fontWeight: fontWeights.bold,
         letterSpacing: '0.05em',
-    }
+    },
+
+    // Component-specific tokens for Headers and Footers
+    headerLogo: {
+        fontFamily: fonts.heading,
+        fontSize: fontSizes['2xl'],
+        fontWeight: fontWeights.bold,
+    },
+    footerLogo: {
+        fontFamily: fonts.heading,
+        fontSize: fontSizes.lg,
+        fontWeight: fontWeights.bold,
+    },
+    footerText: {
+        fontFamily: fonts.body,
+        fontSize: fontSizes.xs,
+        fontWeight: fontWeights.regular,
+    },
+
+    // Component-specific token for Buttons
+    button: {
+        fontFamily: fonts.body,
+        fontSize: fontSizes.base,
+        fontWeight: fontWeights.bold,
+    },
 };

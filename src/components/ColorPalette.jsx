@@ -1,7 +1,7 @@
 import React from 'react';
 import ExampleSection from './ExampleSection.jsx';
 import ColorDisplayTable from './ColorDisplayTable.jsx';
-import { brandColorsData, functionalTonesData, semanticColorsData } from '../data/colorData.js';
+import { brandColorsData, functionalTonesData, semanticColorsData, referenceColorsData } from '../data/colorData.js';
 
 const ColorPalette = () => (
     <ExampleSection 
@@ -12,6 +12,11 @@ const ColorPalette = () => (
             title="Brand Colors"
             description="The brand colors form the core of our visual identity. They are used for key highlights, important information, and to create a dynamic and recognizable presence."
             colors={brandColorsData}
+        />
+        <ColorDisplayTable 
+            title="Reference Colors"
+            description="Colors extracted from our curated reference images."
+            colors={referenceColorsData}
         />
         <ColorDisplayTable
             title="Functional Tones"

@@ -29,3 +29,23 @@ export const semanticColorsData = [
     { name: 'Info Blue Light', token: 'InfoBlueLight', hex: brandColors.InfoBlueLight },
     { name: 'Disabled Gray', token: 'DisabledGray', hex: brandColors.DisabledGray },
 ];
+
+export const referenceColorsData = [
+    { name: 'Reference Beige', token: 'ReferenceBeige', hex: brandColors.ReferenceBeige },
+    { name: 'Reference Gold', token: 'ReferenceGold', hex: brandColors.ReferenceGold },
+    { name: 'Reference Mint', token: 'ReferenceMint', hex: brandColors.ReferenceMint },
+    { name: 'Reference Amber', token: 'ReferenceAmber', hex: brandColors.ReferenceAmber },
+    { name: 'Reference Orange', token: 'ReferenceOrange', hex: brandColors.ReferenceOrange },
+    { name: 'Reference Stone', token: 'ReferenceStone', hex: brandColors.ReferenceStone },
+    { name: 'Reference Tan', token: 'ReferenceTan', hex: brandColors.ReferenceTan },
+    { name: 'Reference Teal', token: 'ReferenceTeal', hex: brandColors.ReferenceTeal },
+    { name: 'Reference Olive', token: 'ReferenceOlive', hex: brandColors.ReferenceOlive },
+    { name: 'Reference Khaki', token: 'ReferenceKhaki', hex: brandColors.ReferenceKhaki },
+    { name: 'Reference Copper', token: 'ReferenceCopper', hex: brandColors.ReferenceCopper },
+    { name: 'Reference Charcoal', token: 'ReferenceCharcoal', hex: brandColors.ReferenceCharcoal },
+    { name: 'Reference Brown', token: 'ReferenceBrown', hex: brandColors.ReferenceBrown },
+    { name: 'Reference Slate', token: 'ReferenceSlate', hex: brandColors.ReferenceSlate },
+    { name: 'Reference Dark Olive', token: 'ReferenceDarkOlive', hex: brandColors.ReferenceDarkOlive },
+];
+
+
