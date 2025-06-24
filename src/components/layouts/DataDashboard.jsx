@@ -1,7 +1,7 @@
 import React from 'react';
 import { brandColors } from '../../data/colors.js';
 import { WithSnippet } from '../WithSnippet.jsx';
-import { checkeredPatternSmall } from '../../data/patterns.js';
+import { patterns, patternSizes } from '../../data/patterns.js';
 
 const DataDashboard = () => {
     const snippet = (
@@ -9,7 +9,7 @@ const DataDashboard = () => {
             <li><strong>Purpose:</strong> A static example of a project analytics dashboard, showcasing key performance indicators (KPIs) and data visualizations like bar and line charts.</li>
             <li><strong>Layout Structure:</strong>
                 <ul>
-                    <li>The main container has a <code>rounded-lg</code> border, <code>shadow-lg</code>, and is styled with <code>SecondaryBackground</code>, a <code>GrayLight</code> border, and the <code>checkeredPatternSmall</code> overlay.</li>
+                    <li>The main container has a <code>rounded-lg</code> border, <code>shadow-lg</code>, and is styled with <code>SecondaryBackground</code>, a <code>GrayLight</code> border, and the <code>patterns.subtle</code> overlay.</li>
                     <li>The layout uses a <code>space-y-6</code> utility for vertical spacing between sections.</li>
                     <li><strong>KPI Cards:</strong> A <code>grid</code> with <code>grid-cols-3</code> and a <code>gap-4</code> displays the main metrics. Each card has a <code>bg-white</code> background, <code>rounded-lg</code> corners, a <code>shadow</code>, and <code>p-4</code> padding.</li>
                     <li><strong>Chart Section:</strong> A responsive grid (<code>grid-cols-1 md:grid-cols-3</code>) holds the charts. The bar chart occupies one column, and the line chart spans two (<code>col-span-2</code>).</li>
@@ -67,7 +67,7 @@ const DataDashboard = () => {
         <WithSnippet snippet={snippet}>
             <div>
                 <h5 className="font-medium mb-2 text-gray-600">Data Dashboard</h5>
-                <div className="rounded-lg shadow-lg p-6 space-y-6" style={{backgroundColor: brandColors.SecondaryBackground, border: `1px solid ${brandColors.GrayLight}`, backgroundImage: checkeredPatternSmall, backgroundSize: '10px 10px'}}>
+                <div className="rounded-lg shadow-lg p-6 space-y-6" style={{backgroundColor: brandColors.SecondaryBackground, border: `1px solid ${brandColors.GrayLight}`, backgroundImage: patterns.subtle, backgroundSize: patternSizes.small}}>
                     <h3 className="text-2xl font-bold">Project Analytics</h3>
                     <div className="grid grid-cols-3 gap-4">
                         <div className="p-4 bg-white rounded-lg shadow"><h4 className="text-gray-500 text-sm font-bold">Active Projects</h4><p className="text-3xl font-bold" style={{color: brandColors.AccentDeepBlue}}>12</p></div>

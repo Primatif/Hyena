@@ -2,8 +2,7 @@ import React from 'react';
 import { brandColors } from '../../data/colors.js';
 import { typography } from '../../data/typography.js';
 import { WithSnippet } from '../WithSnippet.jsx';
-import { checkeredPatternSmall } from '../../data/patterns.js';
-import { hexToRgba } from '../../data/utils.js';
+import { patterns, patternSizes } from '../../data/patterns.js';
 
 const ProposalCover = () => {
     const snippet = (
@@ -13,7 +12,7 @@ const ProposalCover = () => {
                 <ul>
                     <li><strong>Main Container:</strong> A relative-positioned container with a <code>shadow-lg</code> and <code>GrayLight</code> border, acting as the page boundary.</li>
                     <li><strong>Classification Banner:</strong> A full-width banner at the top, styled with a solid <code>InfoBlue</code> background and white text to draw attention to its message.</li>
-                    <li><strong>Decorative Element:</strong> An absolutely positioned <code>div</code> at the top-right. It combines the <code>checkeredPatternSmall</code> background pattern with a <code>SecondaryAccent</code> background color and <code>opacity-10</code> for a subtle, layered branding effect.</li>
+                    <li><strong>Decorative Element:</strong> An absolutely positioned <code>div</code> at the top-right. It combines the <code>patterns.subtle</code> background pattern with a <code>SecondaryAccent</code> background color and <code>opacity-10</code> for a subtle, layered branding effect.</li>
                     <li><strong>Content Body:</strong> The main text content is centered and vertically organized, containing the logo, title, subtitle, and client information.</li>
                     <li><strong>Footer Area:</strong> A flex container (<code>flex justify-between</code>) at the bottom holds left-aligned reference info and right-aligned contact details.</li>
                 </ul>
@@ -58,7 +57,7 @@ const ProposalCover = () => {
                     
                     {/* Decorative element */}
                     <div className="absolute top-14 right-0 w-32 h-32 opacity-10" 
-                         style={{ backgroundImage: checkeredPatternSmall, backgroundColor: brandColors.SecondaryAccent }}>
+                         style={{ backgroundImage: patterns.subtle, backgroundSize: patternSizes.small, backgroundColor: brandColors.SecondaryAccent }}>
                     </div>
                     
                     {/* Main content */}

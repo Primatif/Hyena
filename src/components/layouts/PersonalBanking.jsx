@@ -2,7 +2,7 @@ import React from 'react';
 import { brandColors } from '../../data/colors.js';
 import { typography } from '../../data/typography.js';
 import { WithSnippet } from '../WithSnippet.jsx';
-import { checkeredPatternSmall } from '../../data/patterns.js';
+import { patterns, patternSizes } from '../../data/patterns.js';
 
 const PersonalBanking = () => {
     const snippet = (
@@ -53,7 +53,7 @@ const PersonalBanking = () => {
         <WithSnippet snippet={snippet}>
             <h5 className="font-medium mb-2 text-gray-600">Personal Banking</h5>
             <div className="w-full max-w-md mx-auto rounded-lg shadow-lg overflow-hidden" style={{ backgroundColor: brandColors.PrimaryBackground, border: `1px solid ${brandColors.GrayLight}` }}>
-                <div className="text-center border-b" style={{ borderColor: brandColors.GrayLight, backgroundImage: checkeredPatternSmall, backgroundSize: '10px 10px' }}>
+                <div className="text-center border-b" style={{ borderColor: brandColors.GrayLight, backgroundImage: patterns.subtle, backgroundSize: patternSizes.small }}>
                     <div className="py-6">
                         <p className="text-sm mb-1">
                             <span className="bg-white/80 px-2 py-1 rounded" style={{ color: brandColors.GrayMid }}>Total Balance</span>

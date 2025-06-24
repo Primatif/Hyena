@@ -2,7 +2,7 @@ import React from 'react';
 import { brandColors } from '../../data/colors.js';
 import { typography } from '../../data/typography.js';
 import { WithSnippet } from '../WithSnippet.jsx';
-import { checkeredPatternSmall } from '../../data/patterns.js';
+import { patterns, patternSizes } from '../../data/patterns.js';
 
 const TodoList = () => {
     const snippet = (
@@ -55,8 +55,8 @@ const TodoList = () => {
                     className="flex justify-between items-center p-4 rounded-t-lg" 
                     style={{
                         backgroundColor: brandColors.SecondaryBackground, 
-                        backgroundImage: checkeredPatternSmall, 
-                        backgroundSize: '10px 10px', 
+                        backgroundImage: patterns.subtle, 
+                        backgroundSize: patternSizes.small, 
                         borderBottom: `1px solid ${brandColors.GrayLight}`
                     }}
                 >

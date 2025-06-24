@@ -3,7 +3,7 @@ import { brandColors } from '../../data/colors.js';
 import { typography } from '../../data/typography.js';
 import { WithSnippet } from '../WithSnippet.jsx';
 import { hexToRgba } from '../../data/utils.js';
-import { checkeredPatternSmall } from '../../data/patterns.js';
+import { patterns, patternSizes } from '../../data/patterns.js';
 
 const ChatInterface = () => {
     const snippet = (
@@ -15,7 +15,7 @@ const ChatInterface = () => {
                     <li>A flexible (<code>flex</code>) split-panel layout with a fixed height of <code>h-96</code>.</li>
                     <li><strong>Left Navigation Panel (25% width):</strong>
                         <ul>
-                            <li>Styled with <code>PrimaryBackground</code> and the <code>checkeredPatternSmall</code> overlay for texture.</li>
+                            <li>Styled with <code>PrimaryBackground</code> and the <code>patterns.subtle</code> overlay for texture.</li>
                             <li>A <code>border-r</code> separates it from the content area, using <code>GrayLight</code>.</li>
                             <li>Contains the app logo and navigation links. Padding is <code>p-4</code>.</li>
                         </ul>
@@ -56,7 +56,7 @@ const ChatInterface = () => {
                 <h5 className="font-medium mb-2 text-gray-600">Chat Interface</h5>
                 <div className="rounded-lg shadow-lg" style={{backgroundColor: brandColors.SecondaryBackground, border: `1px solid ${brandColors.GrayLight}`}}>
                     <div className="flex h-96">
-                        <div className="w-1/4 p-4 border-r" style={{backgroundColor: brandColors.PrimaryBackground, borderColor: brandColors.GrayLight, backgroundImage: checkeredPatternSmall, backgroundSize: '10px 10px'}}>
+                        <div className="w-1/4 p-4 border-r" style={{backgroundColor: brandColors.PrimaryBackground, borderColor: brandColors.GrayLight, backgroundImage: patterns.subtle, backgroundSize: patternSizes.small}}>
                             <div className="font-bold text-xl mb-6" style={{ ...typography.appLogo, color: brandColors.PrimaryText }}>PRIMATIF AI</div>
                             <nav><ul>
                                 <li className="mb-3"><a href="#" className="font-semibold rounded-md p-2 block" style={{backgroundColor: hexToRgba(brandColors.SecondaryAccent, 0.8), color: brandColors.AccentDeepBlue}}>New Chat</a></li>
