@@ -129,58 +129,152 @@ Our brand balances **professionalism with innovation**. This style guide is the 
     <th>Hex</th>
   </tr>
   <tr>
-    <td><img src="https://img.shields.io/badge/-%20-2E7D32?style=flat-square&logoColor=2E7D32" width="20" height="20" alt=""/></td>
+    <td><img src="https://img.shields.io/badge/-%20-56bd28?style=flat-square&logoColor=56bd28" width="20" height="20" alt=""/></td>
     <td><strong>Success Green</strong></td>
     <td><code>SemanticSuccessGreen</code></td>
-    <td><code>#2E7D32</code></td>
+    <td><code>#56bd28</code></td>
   </tr>
   <tr>
-    <td><img src="https://img.shields.io/badge/-%20-E8F5E9?style=flat-square&logoColor=E8F5E9" width="20" height="20" alt=""/></td>
+    <td><img src="https://img.shields.io/badge/-%20-ebfde3?style=flat-square&logoColor=ebfde3" width="20" height="20" alt=""/></td>
     <td><strong>Success Green Light</strong></td>
     <td><code>SemanticSuccessGreenLight</code></td>
-    <td><code>#E8F5E9</code></td>
+    <td><code>#ebfde3</code></td>
   </tr>
   <tr>
-    <td><img src="https://img.shields.io/badge/-%20-C1152E?style=flat-square&logoColor=C1152E" width="20" height="20" alt=""/></td>
+    <td><img src="https://img.shields.io/badge/-%20-bd4228?style=flat-square&logoColor=bd4228" width="20" height="20" alt=""/></td>
     <td><strong>Error Red</strong></td>
     <td><code>ErrorRed</code></td>
-    <td><code>#C1152E</code></td>
+    <td><code>#bd4228</code></td>
   </tr>
   <tr>
-    <td><img src="https://img.shields.io/badge/-%20-FFE8EB?style=flat-square&logoColor=FFE8EB" width="20" height="20" alt=""/></td>
+    <td><img src="https://img.shields.io/badge/-%20-fde7e3?style=flat-square&logoColor=fde7e3" width="20" height="20" alt=""/></td>
     <td><strong>Error Red Light</strong></td>
     <td><code>ErrorRedLight</code></td>
-    <td><code>#FFE8EB</code></td>
+    <td><code>#fde7e3</code></td>
   </tr>
   <tr>
-    <td><img src="https://img.shields.io/badge/-%20-FFC300?style=flat-square&logoColor=FFC300" width="20" height="20" alt=""/></td>
+    <td><img src="https://img.shields.io/badge/-%20-bd9228?style=flat-square&logoColor=bd9228" width="20" height="20" alt=""/></td>
     <td><strong>Warning Yellow</strong></td>
     <td><code>WarningYellow</code></td>
-    <td><code>#FFC300</code></td>
+    <td><code>#bd9228</code></td>
   </tr>
   <tr>
-    <td><img src="https://img.shields.io/badge/-%20-FFF8E1?style=flat-square&logoColor=FFF8E1" width="20" height="20" alt=""/></td>
+    <td><img src="https://img.shields.io/badge/-%20-fdf5e3?style=flat-square&logoColor=fdf5e3" width="20" height="20" alt=""/></td>
     <td><strong>Warning Yellow Light</strong></td>
     <td><code>WarningYellowLight</code></td>
-    <td><code>#FFF8E1</code></td>
+    <td><code>#fdf5e3</code></td>
   </tr>
   <tr>
-    <td><img src="https://img.shields.io/badge/-%20-53C8ED?style=flat-square&logoColor=53C8ED" width="20" height="20" alt=""/></td>
+    <td><img src="https://img.shields.io/badge/-%20-2897bd?style=flat-square&logoColor=2897bd" width="20" height="20" alt=""/></td>
     <td><strong>Info Blue</strong></td>
     <td><code>InfoBlue</code></td>
-    <td><code>#53C8ED</code></td>
+    <td><code>#2897bd</code></td>
   </tr>
   <tr>
-    <td><img src="https://img.shields.io/badge/-%20-D1EEF9?style=flat-square&logoColor=D1EEF9" width="20" height="20" alt=""/></td>
+    <td><img src="https://img.shields.io/badge/-%20-e3f6fd?style=flat-square&logoColor=e3f6fd" width="20" height="20" alt=""/></td>
     <td><strong>Info Blue Light</strong></td>
     <td><code>InfoBlueLight</code></td>
-    <td><code>#D1EEF9</code></td>
+    <td><code>#e3f6fd</code></td>
+  </tr>
+</table>
+
+<h4>Reference Palette</h4>
+<table>
+  <tr>
+    <th style="width: 20px;">Swatch</th>
+    <th>Name</th>
+    <th>Token</th>
+    <th>Hex</th>
   </tr>
   <tr>
-    <td><img src="https://img.shields.io/badge/-%20-BDBDBD?style=flat-square&logoColor=BDBDBD" width="20" height="20" alt=""/></td>
-    <td><strong>Disabled Gray</strong></td>
-    <td><code>DisabledGray</code></td>
-    <td><code>#BDBDBD</code></td>
+    <td><img src="https://img.shields.io/badge/-%20-eee4d7?style=flat-square&logoColor=eee4d7" width="20" height="20" alt=""/></td>
+    <td><strong>Reference Beige</strong></td>
+    <td><code>ReferenceBeige</code></td>
+    <td><code>#eee4d7</code></td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/-%20-d7c999?style=flat-square&logoColor=d7c999" width="20" height="20" alt=""/></td>
+    <td><strong>Reference Gold</strong></td>
+    <td><code>ReferenceGold</code></td>
+    <td><code>#d7c999</code></td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/-%20-b3ccc7?style=flat-square&logoColor=b3ccc7" width="20" height="20" alt=""/></td>
+    <td><strong>Reference Mint</strong></td>
+    <td><code>ReferenceMint</code></td>
+    <td><code>#b3ccc7</code></td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/-%20-f2bb5f?style=flat-square&logoColor=f2bb5f" width="20" height="20" alt=""/></td>
+    <td><strong>Reference Amber</strong></td>
+    <td><code>ReferenceAmber</code></td>
+    <td><code>#f2bb5f</code></td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/-%20-efa625?style=flat-square&logoColor=efa625" width="20" height="20" alt=""/></td>
+    <td><strong>Reference Orange</strong></td>
+    <td><code>ReferenceOrange</code></td>
+    <td><code>#efa625</code></td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/-%20-aca99f?style=flat-square&logoColor=aca99f" width="20" height="20" alt=""/></td>
+    <td><strong>Reference Stone</strong></td>
+    <td><code>ReferenceStone</code></td>
+    <td><code>#aca99f</code></td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/-%20-cb9c5c?style=flat-square&logoColor=cb9c5c" width="20" height="20" alt=""/></td>
+    <td><strong>Reference Tan</strong></td>
+    <td><code>ReferenceTan</code></td>
+    <td><code>#cb9c5c</code></td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/-%20-779fa2?style=flat-square&logoColor=779fa2" width="20" height="20" alt=""/></td>
+    <td><strong>Reference Teal</strong></td>
+    <td><code>ReferenceTeal</code></td>
+    <td><code>#779fa2</code></td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/-%20-a29171?style=flat-square&logoColor=a29171" width="20" height="20" alt=""/></td>
+    <td><strong>Reference Olive</strong></td>
+    <td><code>ReferenceOlive</code></td>
+    <td><code>#a29171</code></td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/-%20-96933f?style=flat-square&logoColor=96933f" width="20" height="20" alt=""/></td>
+    <td><strong>Reference Khaki</strong></td>
+    <td><code>ReferenceKhaki</code></td>
+    <td><code>#96933f</code></td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/-%20-c7780e?style=flat-square&logoColor=c7780e" width="20" height="20" alt=""/></td>
+    <td><strong>Reference Copper</strong></td>
+    <td><code>ReferenceCopper</code></td>
+    <td><code>#c7780e</code></td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/-%20-6f6a60?style=flat-square&logoColor=6f6a60" width="20" height="20" alt=""/></td>
+    <td><strong>Reference Charcoal</strong></td>
+    <td><code>ReferenceCharcoal</code></td>
+    <td><code>#6f6a60</code></td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/-%20-a15d29?style=flat-square&logoColor=a15d29" width="20" height="20" alt=""/></td>
+    <td><strong>Reference Brown</strong></td>
+    <td><code>ReferenceBrown</code></td>
+    <td><code>#a15d29</code></td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/-%20-416568?style=flat-square&logoColor=416568" width="20" height="20" alt=""/></td>
+    <td><strong>Reference Slate</strong></td>
+    <td><code>ReferenceSlate</code></td>
+    <td><code>#416568</code></td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/-%20-474b3e?style=flat-square&logoColor=474b3e" width="20" height="20" alt=""/></td>
+    <td><strong>Reference Dark Olive</strong></td>
+    <td><code>ReferenceDarkOlive</code></td>
+    <td><code>#474b3e</code></td>
   </tr>
 </table>
 
