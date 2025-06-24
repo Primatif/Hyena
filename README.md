@@ -2,9 +2,17 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&family=Lato:wght@400&display=swap" rel="stylesheet">
 
-This style guide is the foundation for all brand communications. Much like component libraries such as **Storybook.js** or UI frameworks provide reusable building blocks for developers, this guide serves a similar purpose for both **humans and AI**, ensuring a consistent and professional identity across all mediums.
+This style guide is the foundation for **AI-driven canvas content generation** across digital and print formats. Designed specifically for generative AI applications, this guide provides structured tokens, patterns, and component specifications that enable AI systems to create consistent, professional brand communications at scale.
 
-For designers and developers, it offers a clear set of rules and examples to ensure consistency across all manually created assets. For **generative AI**, this guide acts as a structured source of truth. By referencing the defined tokens, patterns, and component snippets, AI systems can create a wide range of visually consistent, on-brand graphics, from UI mockups to marketing materials.
+**Primary Use Cases:**
+- **Digital Canvas Generation**: Social media graphics, web banners, presentations, UI mockups
+- **Print-Ready Outputs**: Business cards, brochures, posters, marketing collateral
+- **Multi-Format Campaigns**: Consistent branding across digital and physical touchpoints
+- **Automated Design Systems**: AI-powered content creation with human-level design quality
+
+For **generative AI systems**, this guide acts as a structured source of truth with precise color tokens, typography specifications, spacing rules, and component patterns. By referencing these defined standards, AI can generate a wide range of visually consistent, on-brand graphics that maintain professional quality across both screen and print applications.
+
+For **human designers and developers**, it offers clear implementation guidelines to ensure consistency when manually creating assets or integrating with AI-generated content.
 
 ## Brand Identity
 
@@ -20,59 +28,19 @@ Our brand balances **professionalism with innovation**. This style guide is the 
 - **Innovative** - Modern approach that embraces new possibilities
 - **Flexible** - Guidelines that empower creative solutions
 
+## Screenshots
+
+<p align="center">
+  <img src="images/screenshot_01.png" alt="Primatif Business Card" width="400"/>
+  <img src="images/screenshot_02.png" alt="Primatif Business Card" width="400"/>
+</p>
+
 ## Quick Reference
 
 *For complete guidelines and interactive examples, view the full style guide in the application.*
 
 ### Colors
 *These colors are defined with specific tokens in the style guide application.*
-
-<h4>Brand Colors</h4>
-<table>
-  <tr>
-    <th style="width: 20px;">Swatch</th>
-    <th>Name</th>
-    <th>Token</th>
-    <th>Hex</th>
-  </tr>
-  <tr>
-    <td><img src="https://img.shields.io/badge/-%20-E31937?style=flat-square&logoColor=E31937" width="20" height="20" alt=""/></td>
-    <td><strong>Primatif Red</strong></td>
-    <td><code>PrimaryAccent</code></td>
-    <td><code>#E31937</code></td>
-  </tr>
-
-  <tr>
-    <td><img src="https://img.shields.io/badge/-%20-5C0411?style=flat-square&logoColor=5C0411" width="20" height="20" alt=""/></td>
-    <td><strong>Primatif Red Darker</strong></td>
-    <td><code>PrimaryAccentDarker</code></td>
-    <td><code>#5C0411</code></td>
-  </tr>
-  <tr>
-    <td><img src="https://img.shields.io/badge/-%20-53C8ED?style=flat-square&logoColor=53C8ED" width="20" height="20" alt=""/></td>
-    <td><strong>Primatif Sky Blue</strong></td>
-    <td><code>SecondaryAccent</code></td>
-    <td><code>#53C8ED</code></td>
-  </tr>
-  <tr>
-    <td><img src="https://img.shields.io/badge/-%20-A0DFF2?style=flat-square&logoColor=A0DFF2" width="20" height="20" alt=""/></td>
-    <td><strong>Sky Blue Light</strong></td>
-    <td><code>AccentSkyBlue</code></td>
-    <td><code>#A0DFF2</code></td>
-  </tr>
-  <tr>
-    <td><img src="https://img.shields.io/badge/-%20-0080A4?style=flat-square&logoColor=0080A4" width="20" height="20" alt=""/></td>
-    <td><strong>Deep Blue</strong></td>
-    <td><code>AccentDeepBlue</code></td>
-    <td><code>#0080A4</code></td>
-  </tr>
-  <tr>
-    <td><img src="https://img.shields.io/badge/-%20-08FF08?style=flat-square&logoColor=08FF08" width="20" height="20" alt=""/></td>
-    <td><strong>Green Screen Green</strong></td>
-    <td><code>TertiaryAccent</code></td>
-    <td><code>#08FF08</code></td>
-  </tr>
-</table>
 
 <h4>Functional Tones</h4>
 <table>
@@ -278,7 +246,22 @@ Our brand balances **professionalism with innovation**. This style guide is the 
   </tr>
 </table>
 
+### Design Principles
+
+*Core principles for AI-driven canvas content generation across digital and print formats.*
+
+- **Token-Driven Consistency** - All colors, typography, and spacing use centralized design tokens for precise AI implementation
+- **Cross-Format Optimization** - Design specifications work seamlessly across digital screens (72-96 DPI) and print media (300+ DPI)
+- **Scalable Grid System** - 4px base spacing unit ensures clean layouts at any canvas size or resolution
+- **Accessible Color Contrast** - All color combinations meet WCAG AA standards for both digital and print readability
+- **Semantic Color Usage** - Color tokens convey meaning consistently across all generated content
+- **Modular Component System** - Reusable patterns and layouts enable efficient AI content generation
+- **Print-Ready Specifications** - CMYK color profiles and bleed considerations built into all design tokens
+- **Responsive Scaling** - Typography and spacing scales appropriately for different canvas dimensions
+
 ### Typography
+
+*Typography specifications optimized for AI-driven canvas generation across digital and print formats.*
 
 <table>
 <tr>
@@ -286,45 +269,44 @@ Our brand balances **professionalism with innovation**. This style guide is the 
 <th>Font Family</th>
 <th>Weight</th>
 <th>Example</th>
-<th>Usage</th>
+<th>Canvas Applications</th>
 </tr>
 <tr>
-<td><strong>Logo & Headers</strong></td>
+<td><strong>Brand Headlines</strong></td>
 <td>Bebas Neue</td>
 <td>Regular</td>
 <td><span style="font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.05em;">PRIMATIF</span></td>
-<td>Bold, modern headlines</td>
+<td>Logo lockups, hero text, poster headlines, social media headers</td>
 </tr>
 <tr>
-<td><strong>Headings</strong></td>
+<td><strong>Primary Headings</strong></td>
 <td>Roboto</td>
 <td>Bold (700)</td>
-<td><span style="font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 18px;">Clean Professional Title</span></td>
-<td>Clean, professional titles</td>
+<td><span style="font-family: 'Roboto', sans-serif; font-weight: 700; font-size: 18px;">Professional Title Text</span></td>
+<td>Section headers, card titles, presentation slides, brochure headings</td>
 </tr>
 <tr>
-<td><strong>Body Text</strong></td>
+<td><strong>Body Content</strong></td>
 <td>Roboto</td>
 <td>Regular (400)</td>
-<td><span style="font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 16px;">Readable, accessible content</span></td>
-<td>Readable, accessible content</td>
+<td><span style="font-family: 'Roboto', sans-serif; font-weight: 400; font-size: 16px;">Clear, readable content for all formats</span></td>
+<td>Descriptions, captions, article text, print body copy</td>
 </tr>
 <tr>
-<td><strong>Subtitles</strong></td>
+<td><strong>Supporting Text</strong></td>
 <td>Lato</td>
 <td>Regular (400)</td>
-<td><span style="font-family: 'Lato', sans-serif; font-weight: 400; font-size: 16px;">Clean, complementary text</span></td>
-<td>Clean, complementary text</td>
+<td><span style="font-family: 'Lato', sans-serif; font-weight: 400; font-size: 16px;">Complementary information</span></td>
+<td>Subtitles, metadata, fine print, secondary information</td>
 </tr>
 </table>
 
-### Design Principles
-- **4px base spacing unit** for consistent rhythm
-- **Mobile-first responsive design** 
-- **Accessible color contrast** ratios
-- **Semantic color usage** for intuitive user feedback
-
-
+**Typography Guidelines for AI Generation:**
+- **Minimum font sizes**: 12pt for print, 14px for digital to ensure readability
+- **Line spacing**: 1.4-1.6x font size for optimal readability across formats
+- **Letter spacing**: Bebas Neue requires 0.05em tracking for brand consistency
+- **Hierarchy**: Maintain 2-3pt/px size differences between heading levels
+- **Print considerations**: All fonts are web-safe and print-optimized
 
 *Visit the interactive style guide for detailed usage examples, component specifications, and downloadable resources.*
 

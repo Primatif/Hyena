@@ -47,3 +47,35 @@ export const brandColors = {
   InfoBlue: '#2897bd',
   InfoBlueLight: '#e3f6fd',
 };
+
+// Semantic Aliases: Provides functional names for colors used in components.
+export const semanticColors = {
+    // Backgrounds
+    backgroundRoot: brandColors.PrimaryBackground, // Base page background
+    backgroundSubtle: brandColors.SecondaryBackground, // Subtle backgrounds for containers
+    backgroundSurface: brandColors.PrimaryBackground, // Default for cards, modals, etc.
+
+    // Text
+    textPrimary: brandColors.PrimaryText,
+    textSecondary: brandColors.GrayDark,
+    textMuted: brandColors.GrayMid,
+    textOnAccent: brandColors.PrimaryBackground, // Text on a colorful background
+
+    // Borders
+    borderDefault: brandColors.GrayLight,
+    borderSubtle: brandColors.SecondaryBackground, // Using SecondaryBackground as it's a very light gray
+
+    // Accents
+    accentPrimary: brandColors.PrimaryAccent,
+    accentSecondary: brandColors.SecondaryAccent,
+
+    // Functional Tones
+    functionalSuccess: brandColors.SemanticSuccessGreen,
+    functionalSuccessBg: brandColors.SemanticSuccessGreenLight,
+    functionalError: brandColors.ErrorRed,
+    functionalErrorBg: brandColors.ErrorRedLight,
+    functionalWarning: brandColors.WarningYellow,
+    functionalWarningBg: brandColors.WarningYellowLight,
+    functionalInfo: brandColors.InfoBlue,
+    functionalInfoBg: brandColors.InfoBlueLight,
+};

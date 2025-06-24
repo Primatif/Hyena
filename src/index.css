@@ -2,38 +2,48 @@
 
 @layer base {
   body {
-    @apply font-body bg-primary-background text-primary-text;
+    font-family: "Lato", sans-serif;
+    background-color: #FFFFFF;
+    color: #212121;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold tracking-wider;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
   }
 
   h1 {
-    @apply text-5xl mb-4;
+    font-size: 3rem;
+    margin-bottom: 1rem;
   }
 
   h2 {
-    @apply text-4xl mb-3;
+    font-size: 2.25rem;
+    margin-bottom: 0.75rem;
   }
 
   h3 {
-    @apply text-2xl mb-2;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 
   h4 {
-    @apply text-xl mb-2;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
   }
 
   h5 {
-    @apply text-lg mb-2;
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
   }
 
   h6 {
-    @apply text-base mb-2;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   p {
-    @apply mb-4;
+    margin-bottom: 1rem;
   }
 }
