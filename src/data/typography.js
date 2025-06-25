@@ -120,4 +120,38 @@ export const typography = {
         fontSize: fontSizes.base,
         fontWeight: fontWeights.bold,
     },
+
+    // Component-specific tokens for Diagrams
+    diagramContainer: {
+        fontSize: 'clamp(8px, 1.5vw, 12px)', // Dynamic base size for responsive scaling
+    },
+    diagramTitle: {
+        fontFamily: fonts.body,
+        fontSize: '0.75em', // Relative to container
+        fontWeight: fontWeights.bold,
+        textTransform: 'uppercase',
+        letterSpacing: '0.05em',
+        lineHeight: '1.2',
+    },
+    diagramNode: {
+        fontFamily: fonts.body,
+        fontSize: '0.8em', // Relative to container
+        fontWeight: '600', // Semi-bold
+        lineHeight: '1.2',
+        textAlign: 'center',
+    },
+    diagramLabel: {
+        fontFamily: fonts.body,
+        fontSize: '0.7em', // Relative to container
+        fontWeight: '500', // Medium
+        lineHeight: '1.1',
+        textAlign: 'center',
+    },
+    diagramArrow: {
+        fontSize: '2em', // Relative to container
+        lineHeight: '1',
+    },
+    diagramIcon: {
+        fontSize: '1.1em', // Relative to container
+    },
 };

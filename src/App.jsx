@@ -45,14 +45,14 @@ const StyleGuideDocument = () => {
                         <div>
                             <h1 className="text-3xl font-bold" style={{ ...typography.guideTitle, color: brandColors.PrimaryText }}>PRIMATIF BRAND STYLE GUIDE</h1>
                             <p className="text-lg" style={{ ...typography.subtitle, color: brandColors.PrimaryText }}>
-                                A guide to our visual identity.
+                                AI-Driven Brand Content Generation System
                             </p>
                         </div>
                     </div>
                     <p className="text-sm mb-6" style={{ color: brandColors.GrayDark }}>
-                        This style guide is a living document that defines the visual language of the Primatif brand. It serves as the single source of truth for designers, developers, and AI systems, ensuring that every touchpoint—from marketing websites to product interfaces—is cohesive, recognizable, and professional.
+                        This design system solves a critical challenge in AI-generated content: the gap between generic styling and authentic brand expression. Current generative content tools produce visually generic outputs that fail to capture brand identity, making it difficult to create professional, cohesive materials that align with established brand standards.
                         <br/><br/>
-                        For our human team members, this guide provides a clear framework of design tokens, components, and patterns. Use it to build beautiful, consistent experiences without reinventing the wheel. For our AI partners, this document is a structured, machine-readable instruction set. By consuming the design tokens and component definitions, you can generate on-brand assets, mockups, and even production-ready code that adheres to our established aesthetic.
+                        Our solution is an AI-consumable design standard that serves as a foundation for intelligent content generation. This system consists of centralized design tokens, component libraries, implementation snippets, and semantic documentation that enable AI canvas tools to produce novel layouts while preserving brand consistency and visual sophistication across digital and print contexts.
                     </p>
 
                     <div className="p-4 mb-6 rounded-lg" style={{ backgroundColor: brandColors.SecondaryBackground, border: `1px solid ${brandColors.GrayLight}` }}>
