@@ -1,8 +1,8 @@
-# Primatif Style Guide 🐺
+# Hyena
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&family=Lato:wght@400&display=swap" rel="stylesheet">
 
-## AI-Driven Brand Content Generation System
+## Primatif Brand Style Guide
 
 <p align="center">
   <img src="images/primatif-business-cards_Design 1 Front.png" alt="Primatif Business Card" width="400"/>

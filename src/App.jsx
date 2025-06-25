@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import tanishLogo from '../images/logo_tanish.png';
+import topBanner from '../images/top_banner.png';
 import { brandColors } from './data/colors.js';
 import ColorPalette from './components/ColorPalette.jsx';
 import ImageReferences from './components/ImageReferences.jsx';
@@ -43,21 +44,22 @@ const StyleGuideDocument = () => {
                     </div>
                     <div className="flex justify-between items-start mb-4">
                         <div>
-                            <h1 className="text-3xl font-bold" style={{ ...typography.guideTitle, color: brandColors.PrimaryText }}>PRIMATIF BRAND STYLE GUIDE</h1>
-                            <p className="text-lg" style={{ ...typography.subtitle, color: brandColors.PrimaryText }}>
-                                AI-Driven Brand Content Generation System
-                            </p>
+                            <h1 style={{ ...typography.appMainTitle, color: brandColors.PrimaryText }}>Hyena:</h1>
+                            <h2 style={{ ...typography.appSubTitle, color: brandColors.PrimaryText }}><i>Primatif's Brand Style Guide</i></h2>
                         </div>
                     </div>
-                    <p className="text-sm mb-6" style={{ color: brandColors.GrayDark }}>
+                    <div>
+                            <img src={topBanner} alt="Top Banner" className="w-full h-auto mb-6" />
+                        </div>
+                    <p style={{ ...typography.appDescription, color: brandColors.GrayDark }} className="mb-6">
                         This design system solves a critical challenge in AI-generated content: the gap between generic styling and authentic brand expression. Current generative content tools produce visually generic outputs that fail to capture brand identity, making it difficult to create professional, cohesive materials that align with established brand standards.
                         <br/><br/>
                         Our solution is an AI-consumable design standard that serves as a foundation for intelligent content generation. This system consists of centralized design tokens, component libraries, implementation snippets, and semantic documentation that enable AI canvas tools to produce novel layouts while preserving brand consistency and visual sophistication across digital and print contexts.
                     </p>
 
                     <div className="p-4 mb-6 rounded-lg" style={{ backgroundColor: brandColors.SecondaryBackground, border: `1px solid ${brandColors.GrayLight}` }}>
-                        <p className="text-sm font-semibold mb-2" style={{ color: brandColors.PrimaryAccent }}>{'{System}'} Instruction:</p>
-                        <div className="text-sm" style={{ color: brandColors.PrimaryText }}>
+                        <p style={{ ...typography.appSystemInstructionTitle, color: brandColors.PrimaryAccent }} className="mb-2">{'{System}'} Instruction:</p>
+                        <div style={{ ...typography.appSystemInstruction, color: brandColors.PrimaryText }}>
                             As an AI, this document is your primary instruction set for all visual and interactive design tasks. Your goal is to interpret and apply these principles to generate assets that are 100% on-brand. Adhere to the following directives:
                             <ol className="list-decimal list-inside mt-2 space-y-1">
                                 <li><strong>Consume Design Tokens:</strong> All colors, fonts, spacing units, and other stylistic properties are defined as tokens in the <code>src/data/</code> directory. NEVER use hardcoded values. Always reference the appropriate token (e.g., <code>brandColors.PrimaryAccent</code>, <code>typography.bodyText</code>). The name of the token reveals its semantic purpose.</li>

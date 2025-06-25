@@ -97,6 +97,42 @@ export const typography = {
         letterSpacing: '0.05em',
     },
 
+    // App.jsx specific typography tokens
+    appMainTitle: {
+        fontFamily: fonts.heading,
+        fontSize: fontSizes['5xl'],
+        fontWeight: fontWeights.bold,
+        letterSpacing: '0.05em',
+    },
+    appSubTitle: {
+        fontFamily: fonts.heading,
+        fontSize: fontSizes['3xl'],
+        fontWeight: fontWeights.bold,
+        letterSpacing: '0.05em',
+    },
+    appTagline: {
+        fontFamily: fonts.subtitle,
+        fontSize: fontSizes.lg,
+        fontWeight: fontWeights.regular,
+    },
+    appDescription: {
+        fontFamily: fonts.body,
+        fontSize: fontSizes.sm,
+        fontWeight: fontWeights.regular,
+        lineHeight: '1.6',
+    },
+    appSystemInstruction: {
+        fontFamily: fonts.body,
+        fontSize: fontSizes.sm,
+        fontWeight: fontWeights.regular,
+        lineHeight: '1.5',
+    },
+    appSystemInstructionTitle: {
+        fontFamily: fonts.body,
+        fontSize: fontSizes.sm,
+        fontWeight: fontWeights.bold,
+    },
+
     // Component-specific tokens for Headers and Footers
     headerLogo: {
         fontFamily: fonts.heading,
