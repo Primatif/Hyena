@@ -5,23 +5,27 @@
 ## Primatif's AI-Driven Brand Content Generation System
 
 <p align="center">
-  <img src="images/primatif-business-cards_Design 1 Front.png" alt="Primatif Business Card" width="400"/>
+<img src="images/animated_card.gif" alt="Animated Card" width="400"/>
 </p>
 
 **Hyena** is Primatif's comprehensive design system that solves a critical challenge in AI-generated content: **the gap between generic styling and authentic brand expression**. Current generative content tools produce visually generic outputs that fail to capture brand identity, making it difficult to create professional, cohesive materials that align with established brand standards.
 
 ### The Problem We Solve
+
 - **Generic Styling Issue**: AI-generated content typically lacks visual sophistication and brand coherence
 - **Brand Alignment Challenge**: Generative tools struggle to maintain consistent brand identity across outputs
 
 ### Our Solution
+
 **Hyena** provides an AI-consumable design standard that serves as a foundation for intelligent content generation, consisting of:
+
 - **Centralized Design Tokens**: Color palettes, typography scales, spacing systems, and visual patterns
-- **Component Libraries**: Pre-built, brand-aligned UI patterns and layout templates  
+- **Component Libraries**: Pre-built, brand-aligned UI patterns and layout templates
 - **Implementation Snippets**: Code examples and styling specifications with semantic annotations
 - **Documentation Framework**: Structured guidelines that enable AI interpretation and application
 
 **Primary Use Cases:**
+
 - **Digital Canvas Generation**: Social media graphics, presentations, web content
 - **Print-Ready Outputs**: Brochures, marketing collateral, branded documents
 - **Multi-Format Campaigns**: Consistent brand identity across digital and print contexts
@@ -40,12 +44,14 @@ This foundation transforms generic AI generation into **brand-intelligent conten
 Our brand balances **professionalism with innovation**. Hyena serves as the foundation for creating all brand communications, ensuring a consistent, professional, and innovative identity across all mediums. These are not strict rules but a framework to empower creativity while maintaining the reliability our brand stands for.
 
 ### The Hyena Philosophy
+
 - **Intelligent Adaptation** - Smart responses to diverse content generation needs
-- **Collaborative Intelligence** - Seamless integration with AI tools and human creativity  
+- **Collaborative Intelligence** - Seamless integration with AI tools and human creativity
 - **Strategic Precision** - Targeted solutions that maintain brand integrity
 - **Pack Mentality** - Unified system components working together harmoniously
 
 ### Core Brand Philosophy
+
 - **Consistent** - Unified visual language across all touchpoints
 - **Professional** - Clean, trustworthy, and reliable aesthetic
 - **Innovative** - Modern approach that embraces new possibilities
@@ -60,10 +66,11 @@ Our brand balances **professionalism with innovation**. Hyena serves as the foun
 
 ## Quick Reference
 
-*For complete guidelines and interactive examples, view the full style guide in the application.*
+_For complete guidelines and interactive examples, view the full style guide in the application._
 
 ### Colors
-*These colors are defined with specific tokens in the style guide application.*
+
+_These colors are defined with specific tokens in the style guide application._
 
 <h4>Functional Tones</h4>
 <table>
@@ -271,7 +278,7 @@ Our brand balances **professionalism with innovation**. Hyena serves as the foun
 
 ### Design Principles
 
-*Core principles for AI-driven canvas content generation across digital and print formats.*
+_Core principles for AI-driven canvas content generation across digital and print formats._
 
 - **Token-Driven Consistency** - All colors, typography, and spacing use centralized design tokens for precise AI implementation
 - **Cross-Format Optimization** - Design specifications work seamlessly across digital screens (72-96 DPI) and print media (300+ DPI)
@@ -284,7 +291,7 @@ Our brand balances **professionalism with innovation**. Hyena serves as the foun
 
 ### Typography
 
-*Typography specifications optimized for AI-driven canvas generation across digital and print formats.*
+_Typography specifications optimized for AI-driven canvas generation across digital and print formats._
 
 <table>
 <tr>
@@ -325,28 +332,32 @@ Our brand balances **professionalism with innovation**. Hyena serves as the foun
 </table>
 
 **Typography Guidelines for AI Generation:**
+
 - **Minimum font sizes**: 12pt for print, 14px for digital to ensure readability
 - **Line spacing**: 1.4-1.6x font size for optimal readability across formats
 - **Letter spacing**: Bebas Neue requires 0.05em tracking for brand consistency
 - **Hierarchy**: Maintain 2-3pt/px size differences between heading levels
 - **Print considerations**: All fonts are web-safe and print-optimized
 
-*Visit the interactive style guide for detailed usage examples, component specifications, and downloadable resources.*
+_Visit the interactive style guide for detailed usage examples, component specifications, and downloadable resources._
 
 ## Quick Start
 
 ### Prerequisites
+
 - Node.js (v18 or higher)
 - npm
 
 ### Installation & Development
 
 1. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 2. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -397,7 +408,7 @@ config/
 ## Features
 
 - **Interactive Color Palettes** - Brand colors, functional tones, and semantic colors
-- **Typography System** - Font hierarchy and usage guidelines  
+- **Typography System** - Font hierarchy and usage guidelines
 - **Component Library** - Buttons, tables, patterns, and layouts
 - **Responsive Design** - Mobile-first approach with defined breakpoints
 - **PDF Export** - Generate downloadable style guide documents
