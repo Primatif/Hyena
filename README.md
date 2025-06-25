@@ -2,7 +2,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&family=Lato:wght@400&display=swap" rel="stylesheet">
 
-## Primatif's AI-Driven Brand Content Generation System
+## Primatif's Style Generation System
 
 <p align="center">
 <img src="images/animated_card.gif" alt="Animated Card" width="400"/>
