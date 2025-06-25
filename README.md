@@ -4,6 +4,10 @@
 
 ## AI-Driven Brand Content Generation System
 
+<p align="center">
+  <img src="images/primatif-business-cards_Design 1 Front.png" alt="Primatif Business Card" width="400"/>
+</p>
+
 This design system solves a critical challenge in AI-generated content: **the gap between generic styling and authentic brand expression**. Current generative content tools produce visually generic outputs that fail to capture brand identity, making it difficult to create professional, cohesive materials that align with established brand standards.
 
 ### The Problem We Solve
@@ -26,10 +30,6 @@ An AI-consumable design standard that serves as a foundation for intelligent con
 This foundation transforms generic AI generation into **brand-intelligent content creation**, ensuring every generated piece maintains professional quality and authentic brand expression.
 
 ## Brand Identity
-
-<p align="center">
-  <img src="images/primatif-business-cards_Design 1 Front.png" alt="Primatif Business Card" width="400"/>
-</p>
 
 Our brand balances **professionalism with innovation**. This style guide is the foundation for creating all brand communications, ensuring a consistent, professional, and innovative identity across all mediums. These are not strict rules but a framework to empower creativity while maintaining the reliability our brand stands for.
 
