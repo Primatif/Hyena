@@ -44,17 +44,18 @@ const StyleGuideDocument = () => {
                     </div>
                     <div className="flex justify-between items-start mb-4">
                         <div>
-                            <h1 style={{ ...typography.appMainTitle, color: brandColors.PrimaryText }}>Hyena:</h1>
-                            <h2 style={{ ...typography.appSubTitle, color: brandColors.PrimaryText }}><i>Primatif's Brand Style Guide</i></h2>
+                            <h1 style={{ ...typography.appMainTitle, color: brandColors.PrimaryText }}>Hyena</h1>
+                            <h2 style={{ ...typography.appSubTitle, color: brandColors.PrimaryText }}><i>Primatif's Style Generation Guidlines</i></h2>
+                       
                         </div>
                     </div>
                     <div>
                             <img src={topBanner} alt="Top Banner" className="w-full h-auto mb-6" />
                         </div>
                     <p style={{ ...typography.appDescription, color: brandColors.GrayDark }} className="mb-6">
-                        This design system solves a critical challenge in AI-generated content: the gap between generic styling and authentic brand expression. Current generative content tools produce visually generic outputs that fail to capture brand identity, making it difficult to create professional, cohesive materials that align with established brand standards.
+                        <strong>Hyena</strong> solves a critical challenge in AI-generated content: the gap between generic styling and authentic brand expression. Current generative content tools produce visually generic outputs that fail to capture brand identity, making it difficult to create professional, cohesive materials that align with established brand standards.
                         <br/><br/>
-                        Our solution is an AI-consumable design standard that serves as a foundation for intelligent content generation. This system consists of centralized design tokens, component libraries, implementation snippets, and semantic documentation that enable AI canvas tools to produce novel layouts while preserving brand consistency and visual sophistication across digital and print contexts.
+                        Hyena provides an AI-consumable design standard that serves as a foundation for intelligent content generation. This system consists of centralized design tokens, component libraries, implementation snippets, and semantic documentation that enable AI canvas tools to produce novel layouts while preserving brand consistency and visual sophistication across digital and print contexts.
                     </p>
 
                     <div className="p-4 mb-6 rounded-lg" style={{ backgroundColor: brandColors.SecondaryBackground, border: `1px solid ${brandColors.GrayLight}` }}>

@@ -2,20 +2,20 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&family=Lato:wght@400&display=swap" rel="stylesheet">
 
-## Primatif Brand Style Guide
+## Primatif's AI-Driven Brand Content Generation System
 
 <p align="center">
   <img src="images/primatif-business-cards_Design 1 Front.png" alt="Primatif Business Card" width="400"/>
 </p>
 
-This design system solves a critical challenge in AI-generated content: **the gap between generic styling and authentic brand expression**. Current generative content tools produce visually generic outputs that fail to capture brand identity, making it difficult to create professional, cohesive materials that align with established brand standards.
+**Hyena** is Primatif's comprehensive design system that solves a critical challenge in AI-generated content: **the gap between generic styling and authentic brand expression**. Current generative content tools produce visually generic outputs that fail to capture brand identity, making it difficult to create professional, cohesive materials that align with established brand standards.
 
 ### The Problem We Solve
 - **Generic Styling Issue**: AI-generated content typically lacks visual sophistication and brand coherence
 - **Brand Alignment Challenge**: Generative tools struggle to maintain consistent brand identity across outputs
 
 ### Our Solution
-An AI-consumable design standard that serves as a foundation for intelligent content generation, consisting of:
+**Hyena** provides an AI-consumable design standard that serves as a foundation for intelligent content generation, consisting of:
 - **Centralized Design Tokens**: Color palettes, typography scales, spacing systems, and visual patterns
 - **Component Libraries**: Pre-built, brand-aligned UI patterns and layout templates  
 - **Implementation Snippets**: Code examples and styling specifications with semantic annotations
@@ -29,9 +29,21 @@ An AI-consumable design standard that serves as a foundation for intelligent con
 
 This foundation transforms generic AI generation into **brand-intelligent content creation**, ensuring every generated piece maintains professional quality and authentic brand expression.
 
+<p align="center">
+  <img src="images/top_banner.png" alt="Hyena Brand Banner" width="800"/>
+</p>
+
 ## Brand Identity
 
-Our brand balances **professionalism with innovation**. This style guide is the foundation for creating all brand communications, ensuring a consistent, professional, and innovative identity across all mediums. These are not strict rules but a framework to empower creativity while maintaining the reliability our brand stands for.
+**Hyena** represents the intelligent, adaptive nature of our AI-driven design system. Just as hyenas are highly intelligent pack hunters known for their strategic thinking and collaborative problem-solving, Hyena the system embodies these qualities in the realm of brand content generation. The name reflects our system's ability to intelligently hunt down design solutions, adapt to various contexts, and work collaboratively with AI tools to produce sophisticated, brand-aligned content.
+
+Our brand balances **professionalism with innovation**. Hyena serves as the foundation for creating all brand communications, ensuring a consistent, professional, and innovative identity across all mediums. These are not strict rules but a framework to empower creativity while maintaining the reliability our brand stands for.
+
+### The Hyena Philosophy
+- **Intelligent Adaptation** - Smart responses to diverse content generation needs
+- **Collaborative Intelligence** - Seamless integration with AI tools and human creativity  
+- **Strategic Precision** - Targeted solutions that maintain brand integrity
+- **Pack Mentality** - Unified system components working together harmoniously
 
 ### Core Brand Philosophy
 - **Consistent** - Unified visual language across all touchpoints
