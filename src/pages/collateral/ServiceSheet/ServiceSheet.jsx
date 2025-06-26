@@ -1,8 +1,6 @@
 import React from 'react';
-import { brandColors } from '../../../data/colors.js';
-import { typography, fonts, fontSizes, fontWeights } from '../../../data/typography.js';
-import { patterns, patternSizes } from '../../../data/patterns.js';
-import { spacing } from '../../../data/spacing.js';
+import { injectServiceSheetStyles } from './ServiceSheet.styles.js';
+import './ServiceSheet.css';
 
 import softwareEngImage from './images/01_software-engineering.png';
 import businessProcessImage from './images/02_business-process.png';
@@ -146,7 +144,15 @@ const experienceData = {
     ]
 };
 
-// --- HELPER FUNCTIONS ---
+// --- UTILITY FUNCTIONS ---
+const chunk = (array, size) => {
+    const chunks = [];
+    for (let i = 0; i < array.length; i += size) {
+        chunks.push(array.slice(i, i + size));
+    }
+    return chunks;
+};
+
 const hexToRgba = (hex, alpha) => {
     const r = parseInt(hex.slice(1, 3), 16);
     const g = parseInt(hex.slice(3, 5), 16);
@@ -154,63 +160,46 @@ const hexToRgba = (hex, alpha) => {
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 };
 
-const chunk = (arr, size) => Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
+// --- HELPER FUNCTIONS ---
+const chunkArray = (arr, size) => Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
   arr.slice(i * size, i * size + size)
 );
 
 // --- PAGE & LAYOUT COMPONENTS ---
-
 const PageFrame = ({ children, pageNumber, totalPages }) => (
-    <div className="page-container" style={{backgroundColor: brandColors.PrimaryBackground, marginBottom: spacing.xl}}>
+    <div className="page-container">
         <div className="page-header">
-            <h2 style={{...typography.h4, color: brandColors.PrimaryText}}>PRIMATIF</h2>
-            <span style={{...typography.body, color: brandColors.GrayDark}}>Services Overview</span>
+            <h2 className="text-4xl">PRIMATIF</h2>
+            <span className="text-lg">Services Overview</span>
         </div>
         <div className="page-content">
             {children}
         </div>
         <div className="page-footer">
-            <span style={{color: brandColors.ReferenceBeige, fontSize: fontSizes.sm}}> 2025 Primatif | hello@primatif.com</span>
-            <span style={{color: brandColors.ReferenceBeige, fontSize: fontSizes.sm}}>Page {pageNumber} of {totalPages}</span>
+            <span className="text-sm"> 2025 Primatif | hello@primatif.com</span>
+            <span className="text-sm">Page {pageNumber} of {totalPages}</span>
         </div>
     </div>
 );
 
 const CoverPage = () => (
-    <div className="page-container cover-page" style={{backgroundColor: brandColors.ReferenceBeige, marginBottom: spacing.xl}}>
+    <div className="page-container cover-page">
         <div className="cover-content">
-            <div 
-                className="decorative-element" 
-                style={{
-                    position: 'absolute',
-                    top: '0',
-                    right: '0',
-                    width: '40%',
-                    height: '30%',
-                    backgroundColor: brandColors.PrimaryBackground,
-                    backgroundImage: patterns.subtle,
-                    backgroundSize: patternSizes.small,
-                    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 20% 100%)',
-                }}
-            />
+            <div className="decorative-element" />
             
             <div className="text-left">
-                <h1 className="text-8xl" style={{ ...typography.h1, fontSize: '5rem', color: brandColors.PrimaryText }}>
-                    PRIMATIF
-                </h1>
-                <p className="text-2xl mt-2" style={{ ...typography.h3, color: brandColors.ReferenceSlate }}>
-                    Services Overview
-                </p>
+                <h1 className="text-8xl">PRIMATIF</h1>
+                <p className="text-2xl mt-2">Services Overview</p>
             </div>
 
             <div className="text-left my-auto">
-                 <p className="max-w-md text-base leading-relaxed" style={{ ...typography.body, color: brandColors.GrayDark }}>
+                 <p className="max-w-md text-base leading-relaxed">
                     This document provides a comprehensive overview of the services offered by Primatif. We partner with organizations of all sizes to provide expert consulting, engineering, and strategic guidance—empowering them to navigate their technological landscape with confidence and drive growth through innovation.
                 </p>
             </div>
 
             <div className="text-left">
-                 <p className="text-2xl leading-tight" style={{ ...typography.h3, color: brandColors.PrimaryText }}>
+                 <p className="text-2xl leading-tight">
                     TECHNOLOGY<br/>
                     EDUCATION<br/>
                     ENTERTAINMENT
@@ -218,36 +207,24 @@ const CoverPage = () => (
             </div>
         </div>
         <div className="cover-footer">
-             <span style={{color: brandColors.GrayDark, fontSize: fontSizes.sm}}>hello@primatif.com</span>
-             <span style={{color: brandColors.GrayDark, fontSize: fontSizes.sm}}>Document valid as of June 2025</span>
+             <span className="text-sm">hello@primatif.com</span>
+             <span className="text-sm">Document valid as of June 2025</span>
         </div>
     </div>
 );
 
 // --- CONTENT-SPECIFIC COMPONENTS ---
-
-
-
 const QuestionsCallout = ({ questions }) => (
-    <div 
-        className="mt-4 p-4 rounded-lg"
-        style={{
-            backgroundColor: brandColors.InfoBlueLight,
-            border: `1px solid ${hexToRgba(brandColors.InfoBlue, 0.5)}`
-        }}
-    >
+    <div className="mt-4 p-4 rounded-lg">
         <div className="flex items-start">
-            <div 
-                className="flex-shrink-0 mr-3 w-6 h-6 rounded-full flex items-center justify-center"
-                style={{ backgroundColor: brandColors.InfoBlue, color: brandColors.PrimaryBackground }}
-            >
+            <div className="flex-shrink-0 mr-3 w-6 h-6 rounded-full flex items-center justify-center">
                 <span className="font-bold text-lg">?</span>
             </div>
-            <span className="font-bold" style={{color: brandColors.InfoBlue, ...typography.body}}>Is this for you?</span>
+            <span className="font-bold">Is this for you?</span>
         </div>
         <ul className="list-disc pl-10 mt-2 space-y-1">
             {questions.map((q, i) => (
-                <li key={i} className="text-sm" style={{color: brandColors.GrayDark, ...typography.body}}>{q}</li>
+                <li key={i} className="text-sm">{q}</li>
             ))}
         </ul>
     </div>
@@ -258,29 +235,20 @@ const ServiceSection = ({ service, imageSrc }) => {
 
     return (
         <div className="service-section">
-            <h3 className="mb-3 text-2xl" style={{ ...typography.h3, color: brandColors.ReferenceBrown }}>
-                {service.title}
-            </h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <h3 className="mb-3 text-2xl">{service.title}</h3>
+            <div className="grid grid-cols-2 gap-6">
                 <div>
                      <div className="mb-4">
-                        <img src={imageSrc} alt={service.title} className="aspect-video w-full rounded-md object-cover border" style={{ borderColor: brandColors.GrayLight }} />
-                        <p className="text-xs italic text-center mt-2" style={{...typography.body, color: brandColors.GrayDark}}>{caption}</p>
+                        <img src={imageSrc} alt={service.title} className="aspect-video w-full rounded-md object-cover border" />
+                        <p className="text-xs italic text-center mt-2">{caption}</p>
                     </div>
                     <QuestionsCallout questions={service.questions} />
                 </div>
                 <div>
-                    <p className="mb-4 leading-relaxed" style={{ ...typography.body, color: brandColors.GrayDark }}>
-                        {service.description}
-                    </p>
+                    <p className="mb-4 leading-relaxed">{service.description}</p>
                     <ul className="list-disc pl-5 space-y-2">
                         {service.benefits.map((item, index) => (
-                            <li 
-                                key={index} 
-                                className="leading-relaxed text-sm"
-                                style={{ ...typography.body, color: brandColors.PrimaryText }}
-                                dangerouslySetInnerHTML={{ __html: item }} 
-                            />
+                            <li key={index} className="leading-relaxed text-sm" dangerouslySetInnerHTML={{ __html: item }} />
                         ))}
                     </ul>
                 </div>
@@ -291,25 +259,19 @@ const ServiceSection = ({ service, imageSrc }) => {
 
 const ExperienceSection = () => (
     <div className="h-full flex flex-col justify-center">
-        <h2 className="text-4xl text-center mb-12" style={{ ...typography.h2, color: brandColors.PrimaryText }}>
-            Experience & Collaboration
-        </h2>
+        <h2 className="text-4xl text-center mb-12">Experience & Collaboration</h2>
         <div className="flex flex-col md:flex-row justify-around text-center gap-8">
             <div>
-                <h3 className="text-xl uppercase tracking-wider mb-4" style={{ ...typography.h4, color: brandColors.ReferenceSlate }}>
-                    Corporate Experience
-                </h3>
-                <ul className="space-y-2" style={{...typography.body, color: brandColors.GrayDark}}>
+                <h3 className="text-xl uppercase tracking-wider mb-4">Corporate Experience</h3>
+                <ul className="space-y-2">
                     {experienceData.corporate.map(item => (
                         <li key={item.key}>{item.name}</li>
                     ))}
                 </ul>
             </div>
             <div>
-                <h3 className="text-xl uppercase tracking-wider mb-4" style={{ ...typography.h4, color: brandColors.ReferenceSlate }}>
-                    Supported Businesses & Organizations
-                </h3>
-                <ul className="space-y-2" style={{...typography.body, color: brandColors.GrayDark}}>
+                <h3 className="text-xl uppercase tracking-wider mb-4">Supported Businesses & Organizations</h3>
+                <ul className="space-y-2">
                     {experienceData.client.map(item => (
                         <li key={item.key}>{item.name}</li>
                     ))}
@@ -320,144 +282,38 @@ const ExperienceSection = () => (
 );
 
 // --- MAIN APP COMPONENT ---
-
 export default function Collateral() {
-    const servicesByPage = chunk(servicesData, 2);
+    const servicesByPage = chunkArray(servicesData, 2);
     const totalPages = 1 + servicesByPage.length + 1; // Cover + Service pages + Experience page
 
+    React.useEffect(() => {
+        injectServiceSheetStyles();
+    }, []);
+
     return (
-        <div className="p-4 md:p-8" style={{backgroundColor: brandColors.ReferenceBeige, backgroundImage: patterns.sand, backgroundSize: patternSizes.large}}>
-            <div id="collateral-content">
+        <div className="service-sheet-wrapper">
+            <div id="collateral-content" className="service-sheet-container">
                 <div className="space-y-8">
                     {/* Page 1: Cover */}
                     <CoverPage />
 
-                    {/* Pages 2-4: Services */}
-                    {servicesByPage.map((pageServices, index) => (
-                        <PageFrame key={index} pageNumber={index + 2} totalPages={totalPages}>
-                            <div className="space-y-8">
-                                {pageServices.map(service => (
+                    {/* Service Pages */}
+                    {servicesByPage.map((services, pageIndex) => (
+                        <PageFrame key={pageIndex} pageNumber={pageIndex + 2} totalPages={totalPages}>
+                            <div className="space-y-12">
+                                {services.map((service, serviceIndex) => (
                                     <ServiceSection key={service.id} service={service} imageSrc={serviceImages[service.id]} />
                                 ))}
                             </div>
                         </PageFrame>
                     ))}
-                    
-                    {/* Page 5: Experience */}
+
+                    {/* Experience Page */}
                     <PageFrame pageNumber={totalPages} totalPages={totalPages}>
                         <ExperienceSection />
                     </PageFrame>
                 </div>
             </div>
-
-            <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@400;700&display=swap');
-                
-                body {
-                    font-family: ${fonts.body};
-                    color: ${brandColors.PrimaryText};
-                }
-                
-                .page-container {
-                    width: 100%;
-                    max-width: 816px; /* 8.5in at 96dpi */
-                    min-height: 1056px; /* 11in at 96dpi */
-                    margin: 0 auto;
-                    padding: 0;
-                    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-                    border: 1px solid ${brandColors.GrayLight};
-                    position: relative;
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .page-content {
-                    flex-grow: 1;
-                    padding: ${spacing.lg} ${spacing.xl};
-                }
-
-                .page-header {
-                    flex-shrink: 0;
-                    padding: ${spacing.md} ${spacing.xl};
-                    border-bottom: 1px solid ${brandColors.GrayLight};
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-
-                .page-footer {
-                    flex-shrink: 0;
-                    padding: ${spacing.md} ${spacing.xl};
-                    background-color: ${brandColors.ReferenceCharcoal};
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-                
-                .cover-page {
-                    padding: 0; 
-                    border: none;
-                    background-color: ${brandColors.ReferenceBeige};
-                }
-
-                .cover-content {
-                    position: relative;
-                    flex-grow: 1;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    padding: ${spacing.xl};
-                    background-color: ${brandColors.PrimaryBackground};
-                    z-index: 1;
-                    overflow: hidden;
-                }
-                
-                .cover-footer {
-                    flex-shrink: 0;
-                    padding: ${spacing.md} ${spacing.xl};
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    border-top: 1px solid ${brandColors.GrayLight};
-                    background-color: ${brandColors.PrimaryBackground};
-                }
-
-                .service-section + .service-section {
-                    margin-top: ${spacing.xl};
-                    padding-top: ${spacing.xl};
-                    border-top: 1px dashed ${brandColors.GrayLight};
-                }
-
-                strong {
-                    font-weight: ${fontWeights.bold};
-                    color: ${brandColors.PrimaryText};
-                }
-
-                @media print {
-                    body {
-                        background-color: white !important;
-                    }
-                    .page-container {
-                        box-shadow: none;
-                        border: none;
-                        margin: 0;
-                        padding: 0;
-                        max-width: 100%;
-                        min-height: auto;
-                        page-break-after: always;
-                    }
-                    .p-4, .p-8 {
-                       padding: 0 !important;
-                    }
-                    .space-y-8 > :not([hidden]) ~ :not([hidden]) {
-                        margin-top: 0 !important;
-                    }
-                    @page {
-                        size: A4;
-                        margin: 1.5cm;
-                    }
-                }
-            `}</style>
         </div>
     );
 }

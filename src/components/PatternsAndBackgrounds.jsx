@@ -32,6 +32,7 @@ const PatternsAndBackgrounds = () => {
                         <li><code>patterns.stone</code>: Neutral and sophisticated (stone/charcoal)</li>
                         <li><code>patterns.copper</code>: Rich and warm (tan/copper)</li>
                         <li><code>patterns.forest</code>: Deep and grounded (olive/slate)</li>
+                        <li><code>patterns.accent</code>: Brand emphasis (red accent on light gray)</li>
                     </ul>
                 </li>
                 <li><strong>Usage:</strong> Each variation uses carefully selected color pairs from our brand palette to create balanced, harmonious patterns.</li>
@@ -42,7 +43,7 @@ const PatternsAndBackgrounds = () => {
     return (
         <ExampleSection
             title="Patterns & Backgrounds"
-            commentary="Our pattern system offers 8 distinct variations, each using carefully balanced color pairs from our brand palette. Use different sizes to control visual impact."
+            commentary="Our pattern system offers 9 distinct variations, each using carefully balanced color pairs from our brand palette. Use different sizes to control visual impact."
         >
             <div className="space-y-8">
                 <WithSnippet snippet={snippets.main}>
@@ -86,6 +87,9 @@ const PatternsAndBackgrounds = () => {
                         </div>
                         <div className="h-32 rounded-lg flex items-center justify-center" style={{ backgroundImage: patterns.forest, backgroundSize: patternSizes.medium }}>
                             <span className="bg-white/80 px-2 py-1 rounded text-xs">Forest</span>
+                        </div>
+                        <div className="h-32 rounded-lg flex items-center justify-center" style={{ backgroundImage: patterns.accent, backgroundSize: patternSizes.medium }}>
+                            <span className="bg-black/50 px-2 py-1 rounded text-xs text-white">Accent</span>
                         </div>
                     </div>
                 </WithSnippet>

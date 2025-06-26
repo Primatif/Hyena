@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate-pdf": "node scripts/generate-pdf.js"
+    "pdf:style-guide": "node scripts/generate-pdf.js",
+    "pdf:service-sheet": "node scripts/generate-service-sheet.js"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.10",

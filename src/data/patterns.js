@@ -21,6 +21,8 @@ export const createCheckeredPattern = (color1, color2) => {
 export const patterns = {
     // Light and subtle - the original gentle pattern
     subtle: createCheckeredPattern(brandColors.PrimaryBackground, brandColors.GrayLight),
+    // Brand accent pattern - red accent on light gray background
+    accent: createCheckeredPattern(brandColors.SecondaryBackground, brandColors.PrimaryAccent),
     // Cool and professional - blue tones
     ocean: createCheckeredPattern(brandColors.SecondaryAccent, brandColors.AccentDeepBlue),
     // Warm and earthy - beige and gold tones
