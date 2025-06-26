@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation.jsx';
 import StyleGuide from './pages/style-guide/StyleGuide.jsx';
-import ServiceSheet from './pages/collateral/ServiceSheet.jsx';
+import ServiceSheet from './pages/collateral/ServiceSheet/ServiceSheet.jsx';
 import { brandColors } from './data/colors.js';
 
 const App = () => {

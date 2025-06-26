@@ -1,8 +1,15 @@
 import React from 'react';
-import { brandColors } from '../../data/colors.js';
-import { typography, fonts, fontSizes, fontWeights } from '../../data/typography.js';
-import { patterns, patternSizes } from '../../data/patterns.js';
-import { spacing } from '../../data/spacing.js';
+import { brandColors } from '../../../data/colors.js';
+import { typography, fonts, fontSizes, fontWeights } from '../../../data/typography.js';
+import { patterns, patternSizes } from '../../../data/patterns.js';
+import { spacing } from '../../../data/spacing.js';
+
+import softwareEngImage from './images/01_software-engineering.png';
+import businessProcessImage from './images/02_business-process.png';
+import generalTechImage from './images/03_general-tech.png';
+import analyticsImage from './images/04_analytics-datascience.png';
+import genAiImage from './images/05_gen-ai.png';
+import hiringImage from './images/06_hiring-interviewing.png';
 
 // --- DATA STRUCTURE ---
 const servicesData = [
@@ -111,6 +118,15 @@ const servicesData = [
     }
 ];
 
+const serviceImages = {
+    'software-eng': softwareEngImage,
+    'tech-mgmt': businessProcessImage,
+    'gen-consulting': generalTechImage,
+    'analytics': analyticsImage,
+    'gen-ai': genAiImage,
+    'hiring': hiringImage,
+};
+
 const experienceData = {
     corporate: [
         { name: 'Best Buy', key: 'bby' },
@@ -210,24 +226,7 @@ const CoverPage = () => (
 
 // --- CONTENT-SPECIFIC COMPONENTS ---
 
-const GraphicPlaceholder = () => (
-    <div 
-        className="aspect-video w-full rounded-md flex items-center justify-center border" 
-        style={{ 
-            backgroundColor: brandColors.ReferenceStone, 
-            borderColor: brandColors.GrayLight,
-        }}
-    >
-        <div className="text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={brandColors.GrayDark} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-2">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                <polyline points="21 15 16 10 5 21"></polyline>
-            </svg>
-            <p style={{...typography.body, color: brandColors.GrayDark, fontSize: fontSizes.sm}}>Image Placeholder</p>
-        </div>
-    </div>
-);
+
 
 const QuestionsCallout = ({ questions }) => (
     <div 
@@ -254,36 +253,41 @@ const QuestionsCallout = ({ questions }) => (
     </div>
 );
 
-const ServiceSection = ({ service }) => (
-    <div className="service-section">
-        <h3 className="mb-3 text-2xl" style={{ ...typography.h3, color: brandColors.ReferenceBrown }}>
-            {service.title}
-        </h3>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div>
-                 <div className="mb-4">
-                    <GraphicPlaceholder />
+const ServiceSection = ({ service, imageSrc }) => {
+    const caption = service.description.split('.')[0] + '.';
+
+    return (
+        <div className="service-section">
+            <h3 className="mb-3 text-2xl" style={{ ...typography.h3, color: brandColors.ReferenceBrown }}>
+                {service.title}
+            </h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div>
+                     <div className="mb-4">
+                        <img src={imageSrc} alt={service.title} className="aspect-video w-full rounded-md object-cover border" style={{ borderColor: brandColors.GrayLight }} />
+                        <p className="text-xs italic text-center mt-2" style={{...typography.body, color: brandColors.GrayDark}}>{caption}</p>
+                    </div>
+                    <QuestionsCallout questions={service.questions} />
                 </div>
-                <QuestionsCallout questions={service.questions} />
-            </div>
-            <div>
-                <p className="mb-4 leading-relaxed" style={{ ...typography.body, color: brandColors.GrayDark }}>
-                    {service.description}
-                </p>
-                <ul className="list-disc pl-5 space-y-2">
-                    {service.benefits.map((item, index) => (
-                        <li 
-                            key={index} 
-                            className="leading-relaxed text-sm"
-                            style={{ ...typography.body, color: brandColors.PrimaryText }}
-                            dangerouslySetInnerHTML={{ __html: item }} 
-                        />
-                    ))}
-                </ul>
+                <div>
+                    <p className="mb-4 leading-relaxed" style={{ ...typography.body, color: brandColors.GrayDark }}>
+                        {service.description}
+                    </p>
+                    <ul className="list-disc pl-5 space-y-2">
+                        {service.benefits.map((item, index) => (
+                            <li 
+                                key={index} 
+                                className="leading-relaxed text-sm"
+                                style={{ ...typography.body, color: brandColors.PrimaryText }}
+                                dangerouslySetInnerHTML={{ __html: item }} 
+                            />
+                        ))}
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-);
+    );
+};
 
 const ExperienceSection = () => (
     <div className="h-full flex flex-col justify-center">
@@ -333,7 +337,7 @@ export default function Collateral() {
                         <PageFrame key={index} pageNumber={index + 2} totalPages={totalPages}>
                             <div className="space-y-8">
                                 {pageServices.map(service => (
-                                    <ServiceSection key={service.id} service={service} />
+                                    <ServiceSection key={service.id} service={service} imageSrc={serviceImages[service.id]} />
                                 ))}
                             </div>
                         </PageFrame>

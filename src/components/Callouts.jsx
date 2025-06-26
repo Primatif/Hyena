@@ -26,6 +26,11 @@ const Icon = ({ type }) => {
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
       </svg>
     ),
+    usage: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+      </svg>
+    ),
   };
   return icons[type] || null;
 };
@@ -85,6 +90,15 @@ const Callout = ({ type = 'info', title, children }) => {
       },
       icon: { color: brandColors.ErrorRed },
       title: { color: brandColors.ErrorRed },
+      text: { color: hexToRgba(brandColors.PrimaryText, 0.7) },
+    },
+    usage: {
+      container: {
+        backgroundColor: hexToRgba(brandColors.NeutralGrayLight, 0.3),
+        borderColor: hexToRgba(brandColors.NeutralGray, 0.5),
+      },
+      icon: { color: brandColors.NeutralGray },
+      title: { color: brandColors.NeutralGray },
       text: { color: hexToRgba(brandColors.PrimaryText, 0.7) },
     },
   };
@@ -168,6 +182,21 @@ const Callouts = () => {
                 <li><strong>Key Implementation Details:</strong> The <code>type="danger"</code> prop activates the red color theme, providing an unmissable visual cue to the user.</li>
             </ul>
         ),
+        usage: (
+            <ul>
+                <li><strong>Semantic Purpose:</strong> To provide guidance on usage philosophy and best practices.</li>
+                <li><strong>Layout & Structure:</strong> Follows the same icon-left, text-right flexbox structure.</li>
+                <li><strong>Color & Styling (Glassmorphism):</strong>
+                    <ul>
+                        <li><strong>Background:</strong> Uses <code>hexToRgba(brandColors.NeutralGrayLight, 0.3)</code> with a <code>backdrop-blur-xl</code>.</li>
+                        <li><strong>Border:</strong> Uses <code>hexToRgba(brandColors.NeutralGray, 0.5)</code>.</li>
+                        <li><strong>Icon & Title:</strong> Both use neutral gray tones to convey a sense of guidance.</li>
+                        <li><strong>Body Text:</strong> Uses semi-transparent <code>brandColors.PrimaryText</code>.</li>
+                    </ul>
+                </li>
+                <li><strong>Key Implementation Details:</strong> The <code>type="usage"</code> prop activates the neutral gray color theme, providing a subtle yet clear visual cue for guidance.</li>
+            </ul>
+        ),
     };
 
     return (
@@ -197,9 +226,15 @@ const Callouts = () => {
                         This is a critical alert. This action is not reversible and may result in permanent data loss or security vulnerabilities.
                     </Callout>
                 </WithSnippet>
+                <WithSnippet snippet={snippets.usage}>
+                    <Callout type="usage" title="Usage Guidance">
+                        This is a guidance callout. It's perfect for providing best practices, usage philosophy, or additional context that helps users make informed decisions.
+                    </Callout>
+                </WithSnippet>
             </div>
         </ExampleSection>
     );
 };
 
+export { Callout };
 export default Callouts;
