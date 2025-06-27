@@ -4,7 +4,7 @@ import { brandColors } from '../data/colors.js';
 const ColorDisplayTable = ({ title, description, colors }) => (
     <div className="mb-8">
         <h4 className="text-lg font-bold mb-2" style={{ color: brandColors.PrimaryText }}>{title}</h4>
-        {description && <p className="text-sm mb-4" style={{ color: brandColors.PrimaryText }}>{description}</p>}
+        {description && <div className="text-sm mb-4" style={{ color: brandColors.PrimaryText }}>{description}</div>}
         <div className="overflow-x-auto rounded-lg border" style={{ borderColor: brandColors.GrayLight }}>
             <table className="w-full text-left table-auto border-collapse">
                 <thead>

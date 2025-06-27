@@ -112,9 +112,9 @@ const Callout = ({ type = 'info', title, children }) => {
       </div>
       <div className="flex-grow">
         <h3 className="font-bold text-lg" style={styles.title}>{title}</h3>
-        <p className="mt-1 text-sm" style={styles.text}>
+        <div className="mt-1 text-sm" style={styles.text}>
           {children}
-        </p>
+        </div>
       </div>
     </div>
   );
