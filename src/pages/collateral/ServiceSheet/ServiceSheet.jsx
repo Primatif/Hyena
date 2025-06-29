@@ -3,14 +3,10 @@ import { injectServiceSheetStyles } from './ServiceSheet.styles.js';
 import './ServiceSheet.css';
 
 // Import atomic components
-import Text from '../../../components/atoms/Text/Text.jsx';
-import Heading from '../../../components/atoms/Heading/Heading.jsx';
-import Card from '../../../components/atoms/Card/Card.jsx';
-import { Image } from '../../../components/atoms/Image/Image.jsx';
-import Badge from '../../../components/atoms/Badge/Badge.jsx';
-import Button from '../../../components/atoms/Button/Button.jsx';
-import Callout from '../../../components/molecules/Callout/Callout.jsx';
-import { ExampleSection } from '../../../components/molecules/ExampleSection/ExampleSection.jsx';
+import PageFrame from '../../../components/molecules/PageFrame/PageFrame.jsx';
+import CoverPage from '../../../components/organisms/CoverPage/CoverPage.jsx';
+import ServiceSection from '../../../components/organisms/ServiceSection/ServiceSection.jsx';
+import ExperienceSection from '../../../components/organisms/ExperienceSection/ExperienceSection.jsx';
 
 // Import centralized design tokens
 import { brandColors } from '../../../data/colors.js';
@@ -174,170 +170,7 @@ const chunkArray = (arr, size) => Array.from({ length: Math.ceil(arr.length / si
   arr.slice(i * size, i * size + size)
 );
 
-// --- PAGE & LAYOUT COMPONENTS (ATOMIC) ---
-const PageFrame = ({ children, pageNumber, totalPages }) => (
-    <div className="page-container">
-        <div className="page-header">
-            <Heading level={2} variant="display" style={{ color: brandColors.PrimaryText }}>
-                PRIMATIF
-            </Heading>
-            <Text variant="subtitle" style={{ color: brandColors.SecondaryText }}>
-                Services Overview
-            </Text>
-        </div>
-        <div className="page-content">
-            {children}
-        </div>
-        <div className="page-footer">
-            <Text variant="body" className="text-sm" style={{ color: brandColors.SecondaryText }}>
-                © 2025 Primatif | hello@primatif.com
-            </Text>
-            <Text variant="body" className="text-sm" style={{ color: brandColors.SecondaryText }}>
-                Page {pageNumber} of {totalPages}
-            </Text>
-        </div>
-    </div>
-);
 
-const CoverPage = () => (
-    <div className="page-container cover-page">
-        <div className="cover-content">
-            <div className="decorative-element" style={{ 
-                backgroundColor: brandColors.PrimaryAccent,
-                backgroundImage: patterns.accent,
-                backgroundSize: patternSizes.medium
-            }} />
-            
-            <div className="text-left">
-                <Heading level={1} variant="hero" style={{ color: brandColors.PrimaryText }}>
-                    PRIMATIF
-                </Heading>
-                <Text variant="subtitle" className="mt-2" style={{ color: brandColors.SecondaryText }}>
-                    Services Overview
-                </Text>
-            </div>
-
-            <div className="text-left my-auto">
-                <Text variant="body" className="max-w-md leading-relaxed" style={{ color: brandColors.PrimaryText }}>
-                    This document provides a comprehensive overview of the services offered by Primatif. We partner with organizations of all sizes to provide expert consulting, engineering, and strategic guidance—empowering them to navigate their technological landscape with confidence and drive growth through innovation.
-                </Text>
-            </div>
-
-            <div className="text-left">
-                <Text variant="subtitle" className="leading-tight" style={{ color: brandColors.PrimaryAccent }}>
-                    TECHNOLOGY<br/>
-                    EDUCATION<br/>
-                    ENTERTAINMENT
-                </Text>
-            </div>
-        </div>
-        <div className="cover-footer">
-            <Text variant="body" className="text-sm" style={{ color: brandColors.SecondaryText }}>
-                hello@primatif.com
-            </Text>
-            <Text variant="body" className="text-sm" style={{ color: brandColors.SecondaryText }}>
-                Document valid as of June 2025
-            </Text>
-        </div>
-    </div>
-);
-
-// --- CONTENT-SPECIFIC COMPONENTS (ATOMIC) ---
-const QuestionsCallout = ({ questions }) => (
-    <Callout variant="info" title="Is this for you?" className="mt-4">
-        <ul className="list-disc pl-6 mt-2 space-y-1">
-            {questions.map((q, i) => (
-                <li key={i}>
-                    <Text variant="body" className="text-sm" style={{ color: brandColors.PrimaryText }}>
-                        {q}
-                    </Text>
-                </li>
-            ))}
-        </ul>
-    </Callout>
-);
-
-const ServiceSection = ({ service, imageSrc }) => {
-    const caption = service.description.split('.')[0] + '.';
-
-    return (
-        <div className="service-section">
-            <Heading level={3} variant="section" className="mb-3" style={{ color: brandColors.PrimaryText }}>
-                {service.title}
-            </Heading>
-            <div className="grid grid-cols-2 gap-6">
-                <div>
-                    <Card variant="default" className="mb-4">
-                        <Image 
-                            src={imageSrc} 
-                            alt={service.title} 
-                            className="aspect-video w-full rounded-md object-cover" 
-                        />
-                        <Text variant="body" className="text-xs italic text-center mt-2" style={{ color: brandColors.SecondaryText }}>
-                            {caption}
-                        </Text>
-                    </Card>
-                    <QuestionsCallout questions={service.questions} />
-                </div>
-                <div>
-                    <Text variant="body" className="mb-4 leading-relaxed" style={{ color: brandColors.PrimaryText }}>
-                        {service.description}
-                    </Text>
-                    <ul className="list-disc pl-5 space-y-2">
-                        {service.benefits.map((item, index) => (
-                            <li key={index}>
-                                <Text 
-                                    variant="body" 
-                                    className="leading-relaxed text-sm" 
-                                    style={{ color: brandColors.PrimaryText }}
-                                    dangerouslySetInnerHTML={{ __html: item }} 
-                                />
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-const ExperienceSection = () => (
-    <div className="h-full flex flex-col justify-center">
-        <Heading level={2} variant="display" className="text-center mb-12" style={{ color: brandColors.PrimaryText }}>
-            Experience & Collaboration
-        </Heading>
-        <div className="flex flex-col md:flex-row justify-around text-center gap-8">
-            <Card variant="default" className="flex-1">
-                <Heading level={3} variant="section" className="uppercase tracking-wider mb-4" style={{ color: brandColors.PrimaryAccent }}>
-                    Corporate Experience
-                </Heading>
-                <ul className="space-y-2">
-                    {experienceData.corporate.map(item => (
-                        <li key={item.key}>
-                            <Text variant="body" style={{ color: brandColors.PrimaryText }}>
-                                {item.name}
-                            </Text>
-                        </li>
-                    ))}
-                </ul>
-            </Card>
-            <Card variant="default" className="flex-1">
-                <Heading level={3} variant="section" className="uppercase tracking-wider mb-4" style={{ color: brandColors.PrimaryAccent }}>
-                    Supported Businesses & Organizations
-                </Heading>
-                <ul className="space-y-2">
-                    {experienceData.client.map(item => (
-                        <li key={item.key}>
-                            <Text variant="body" style={{ color: brandColors.PrimaryText }}>
-                                {item.name}
-                            </Text>
-                        </li>
-                    ))}
-                </ul>
-            </Card>
-        </div>
-    </div>
-);
 
 // --- MAIN APP COMPONENT ---
 export default function Collateral() {
@@ -357,7 +190,12 @@ export default function Collateral() {
 
                     {/* Service Pages */}
                     {servicesByPage.map((services, pageIndex) => (
-                        <PageFrame key={pageIndex} pageNumber={pageIndex + 2} totalPages={totalPages}>
+                        <PageFrame 
+                            key={pageIndex} 
+                            pageNumber={pageIndex + 2} 
+                            totalPages={totalPages}
+                            headerSubtitle="Services Overview"
+                        >
                             <div className="space-y-12">
                                 {services.map((service, serviceIndex) => (
                                     <ServiceSection key={service.id} service={service} imageSrc={serviceImages[service.id]} />
@@ -367,8 +205,15 @@ export default function Collateral() {
                     ))}
 
                     {/* Experience Page */}
-                    <PageFrame pageNumber={totalPages} totalPages={totalPages}>
-                        <ExperienceSection />
+                    <PageFrame 
+                        pageNumber={totalPages} 
+                        totalPages={totalPages}
+                        headerSubtitle="Services Overview"
+                    >
+                        <ExperienceSection 
+                            corporateExperience={experienceData.corporate}
+                            clientExperience={experienceData.client}
+                        />
                     </PageFrame>
                 </div>
             </div>

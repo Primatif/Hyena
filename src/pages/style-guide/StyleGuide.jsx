@@ -56,20 +56,22 @@ const StyleGuide = () => {
         <div className="min-h-screen p-4 sm:p-6 lg:p-12" style={{ backgroundColor: brandColors.ReferenceBeige, backgroundImage: patterns.sand, backgroundSize: patternSizes.large }}>
             <Card className="max-w-6xl mx-auto" variant="elevated">
                 <div className="p-6 sm:p-8">
-                    <div className="text-center mb-6 border-b pb-6" style={{ borderColor: brandColors.GrayLight }}>
+                    <div className="mb-6 border-b pb-6" style={{ borderColor: brandColors.GrayLight }}>
                         <img src={tanishLogo} alt="Primatif Logo" className="h-24 w-auto inline-block" />
                         <Heading level={1} variant="display" className="mt-4 mb-2">
                             Primatif AI Design Standard
                         </Heading>
-                        <div className="text-center">
-                            <img src={topBanner} alt="Top Banner" className="w-full h-auto mb-6" />
-                        </div>
                     </div>
                     <Text variant="body" className="mb-6" style={{ color: brandColors.GrayDark }}>
                         <strong>Hyena</strong> solves a critical challenge in AI-generated content: the gap between generic styling and authentic brand expression. Current generative content tools produce visually generic outputs that fail to capture brand identity, making it difficult to create professional, cohesive materials that align with established brand standards.
                         <br/><br/>
                         Hyena provides an AI-consumable design standard that serves as a foundation for intelligent content generation. This system consists of centralized design tokens, component libraries, implementation snippets, and semantic documentation that enable AI canvas tools to produce novel layouts while preserving brand consistency and visual sophistication across digital and print contexts.
                     </Text>
+
+
+                    <div className="text-center">
+                            <img src={topBanner} alt="Top Banner" className="w-full h-auto mb-6 mt-6" />
+                        </div>
 
                     <InstructionBlock title="{System} Instructions" variant="text" showCopyButton={true}>
                         As an AI, this document is your primary instruction set for all visual and interactive design tasks. Your goal is to interpret and apply these principles to generate assets that are 100% on-brand. Adhere to the following directives:
