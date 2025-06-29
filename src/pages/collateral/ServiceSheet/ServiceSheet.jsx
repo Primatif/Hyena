@@ -2,6 +2,22 @@ import React from 'react';
 import { injectServiceSheetStyles } from './ServiceSheet.styles.js';
 import './ServiceSheet.css';
 
+// Import atomic components
+import Text from '../../../components/atoms/Text/Text.jsx';
+import Heading from '../../../components/atoms/Heading/Heading.jsx';
+import Card from '../../../components/atoms/Card/Card.jsx';
+import { Image } from '../../../components/atoms/Image/Image.jsx';
+import Badge from '../../../components/atoms/Badge/Badge.jsx';
+import Button from '../../../components/atoms/Button/Button.jsx';
+import Callout from '../../../components/molecules/Callout/Callout.jsx';
+import { ExampleSection } from '../../../components/molecules/ExampleSection/ExampleSection.jsx';
+
+// Import centralized design tokens
+import { brandColors } from '../../../data/colors.js';
+import { typography } from '../../../data/typography.js';
+import { patterns, patternSizes } from '../../../data/patterns.js';
+import { hexToRgba } from '../../../data/utils.js';
+
 import softwareEngImage from './images/01_software-engineering.png';
 import businessProcessImage from './images/02_business-process.png';
 import generalTechImage from './images/03_general-tech.png';
@@ -153,31 +169,32 @@ const chunk = (array, size) => {
     return chunks;
 };
 
-const hexToRgba = (hex, alpha) => {
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
-    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-};
-
 // --- HELPER FUNCTIONS ---
 const chunkArray = (arr, size) => Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
   arr.slice(i * size, i * size + size)
 );
 
-// --- PAGE & LAYOUT COMPONENTS ---
+// --- PAGE & LAYOUT COMPONENTS (ATOMIC) ---
 const PageFrame = ({ children, pageNumber, totalPages }) => (
     <div className="page-container">
         <div className="page-header">
-            <h2 className="text-4xl">PRIMATIF</h2>
-            <span className="text-lg">Services Overview</span>
+            <Heading level={2} variant="display" style={{ color: brandColors.PrimaryText }}>
+                PRIMATIF
+            </Heading>
+            <Text variant="subtitle" style={{ color: brandColors.SecondaryText }}>
+                Services Overview
+            </Text>
         </div>
         <div className="page-content">
             {children}
         </div>
         <div className="page-footer">
-            <span className="text-sm"> 2025 Primatif | hello@primatif.com</span>
-            <span className="text-sm">Page {pageNumber} of {totalPages}</span>
+            <Text variant="body" className="text-sm" style={{ color: brandColors.SecondaryText }}>
+                © 2025 Primatif | hello@primatif.com
+            </Text>
+            <Text variant="body" className="text-sm" style={{ color: brandColors.SecondaryText }}>
+                Page {pageNumber} of {totalPages}
+            </Text>
         </div>
     </div>
 );
@@ -185,49 +202,59 @@ const PageFrame = ({ children, pageNumber, totalPages }) => (
 const CoverPage = () => (
     <div className="page-container cover-page">
         <div className="cover-content">
-            <div className="decorative-element" />
+            <div className="decorative-element" style={{ 
+                backgroundColor: brandColors.PrimaryAccent,
+                backgroundImage: patterns.accent,
+                backgroundSize: patternSizes.medium
+            }} />
             
             <div className="text-left">
-                <h1 className="text-8xl">PRIMATIF</h1>
-                <p className="text-2xl mt-2">Services Overview</p>
+                <Heading level={1} variant="hero" style={{ color: brandColors.PrimaryText }}>
+                    PRIMATIF
+                </Heading>
+                <Text variant="subtitle" className="mt-2" style={{ color: brandColors.SecondaryText }}>
+                    Services Overview
+                </Text>
             </div>
 
             <div className="text-left my-auto">
-                 <p className="max-w-md text-base leading-relaxed">
+                <Text variant="body" className="max-w-md leading-relaxed" style={{ color: brandColors.PrimaryText }}>
                     This document provides a comprehensive overview of the services offered by Primatif. We partner with organizations of all sizes to provide expert consulting, engineering, and strategic guidance—empowering them to navigate their technological landscape with confidence and drive growth through innovation.
-                </p>
+                </Text>
             </div>
 
             <div className="text-left">
-                 <p className="text-2xl leading-tight">
+                <Text variant="subtitle" className="leading-tight" style={{ color: brandColors.PrimaryAccent }}>
                     TECHNOLOGY<br/>
                     EDUCATION<br/>
                     ENTERTAINMENT
-                </p>
+                </Text>
             </div>
         </div>
         <div className="cover-footer">
-             <span className="text-sm">hello@primatif.com</span>
-             <span className="text-sm">Document valid as of June 2025</span>
+            <Text variant="body" className="text-sm" style={{ color: brandColors.SecondaryText }}>
+                hello@primatif.com
+            </Text>
+            <Text variant="body" className="text-sm" style={{ color: brandColors.SecondaryText }}>
+                Document valid as of June 2025
+            </Text>
         </div>
     </div>
 );
 
-// --- CONTENT-SPECIFIC COMPONENTS ---
+// --- CONTENT-SPECIFIC COMPONENTS (ATOMIC) ---
 const QuestionsCallout = ({ questions }) => (
-    <div className="mt-4 p-4 rounded-lg">
-        <div className="flex items-start">
-            <div className="flex-shrink-0 mr-3 w-6 h-6 rounded-full flex items-center justify-center">
-                <span className="font-bold text-lg">?</span>
-            </div>
-            <span className="font-bold">Is this for you?</span>
-        </div>
-        <ul className="list-disc pl-10 mt-2 space-y-1">
+    <Callout variant="info" title="Is this for you?" className="mt-4">
+        <ul className="list-disc pl-6 mt-2 space-y-1">
             {questions.map((q, i) => (
-                <li key={i} className="text-sm">{q}</li>
+                <li key={i}>
+                    <Text variant="body" className="text-sm" style={{ color: brandColors.PrimaryText }}>
+                        {q}
+                    </Text>
+                </li>
             ))}
         </ul>
-    </div>
+    </Callout>
 );
 
 const ServiceSection = ({ service, imageSrc }) => {
@@ -235,20 +262,37 @@ const ServiceSection = ({ service, imageSrc }) => {
 
     return (
         <div className="service-section">
-            <h3 className="mb-3 text-2xl">{service.title}</h3>
+            <Heading level={3} variant="section" className="mb-3" style={{ color: brandColors.PrimaryText }}>
+                {service.title}
+            </Heading>
             <div className="grid grid-cols-2 gap-6">
                 <div>
-                     <div className="mb-4">
-                        <img src={imageSrc} alt={service.title} className="aspect-video w-full rounded-md object-cover border" />
-                        <p className="text-xs italic text-center mt-2">{caption}</p>
-                    </div>
+                    <Card variant="default" className="mb-4">
+                        <Image 
+                            src={imageSrc} 
+                            alt={service.title} 
+                            className="aspect-video w-full rounded-md object-cover" 
+                        />
+                        <Text variant="body" className="text-xs italic text-center mt-2" style={{ color: brandColors.SecondaryText }}>
+                            {caption}
+                        </Text>
+                    </Card>
                     <QuestionsCallout questions={service.questions} />
                 </div>
                 <div>
-                    <p className="mb-4 leading-relaxed">{service.description}</p>
+                    <Text variant="body" className="mb-4 leading-relaxed" style={{ color: brandColors.PrimaryText }}>
+                        {service.description}
+                    </Text>
                     <ul className="list-disc pl-5 space-y-2">
                         {service.benefits.map((item, index) => (
-                            <li key={index} className="leading-relaxed text-sm" dangerouslySetInnerHTML={{ __html: item }} />
+                            <li key={index}>
+                                <Text 
+                                    variant="body" 
+                                    className="leading-relaxed text-sm" 
+                                    style={{ color: brandColors.PrimaryText }}
+                                    dangerouslySetInnerHTML={{ __html: item }} 
+                                />
+                            </li>
                         ))}
                     </ul>
                 </div>
@@ -259,24 +303,38 @@ const ServiceSection = ({ service, imageSrc }) => {
 
 const ExperienceSection = () => (
     <div className="h-full flex flex-col justify-center">
-        <h2 className="text-4xl text-center mb-12">Experience & Collaboration</h2>
+        <Heading level={2} variant="display" className="text-center mb-12" style={{ color: brandColors.PrimaryText }}>
+            Experience & Collaboration
+        </Heading>
         <div className="flex flex-col md:flex-row justify-around text-center gap-8">
-            <div>
-                <h3 className="text-xl uppercase tracking-wider mb-4">Corporate Experience</h3>
+            <Card variant="default" className="flex-1">
+                <Heading level={3} variant="section" className="uppercase tracking-wider mb-4" style={{ color: brandColors.PrimaryAccent }}>
+                    Corporate Experience
+                </Heading>
                 <ul className="space-y-2">
                     {experienceData.corporate.map(item => (
-                        <li key={item.key}>{item.name}</li>
+                        <li key={item.key}>
+                            <Text variant="body" style={{ color: brandColors.PrimaryText }}>
+                                {item.name}
+                            </Text>
+                        </li>
                     ))}
                 </ul>
-            </div>
-            <div>
-                <h3 className="text-xl uppercase tracking-wider mb-4">Supported Businesses & Organizations</h3>
+            </Card>
+            <Card variant="default" className="flex-1">
+                <Heading level={3} variant="section" className="uppercase tracking-wider mb-4" style={{ color: brandColors.PrimaryAccent }}>
+                    Supported Businesses & Organizations
+                </Heading>
                 <ul className="space-y-2">
                     {experienceData.client.map(item => (
-                        <li key={item.key}>{item.name}</li>
+                        <li key={item.key}>
+                            <Text variant="body" style={{ color: brandColors.PrimaryText }}>
+                                {item.name}
+                            </Text>
+                        </li>
                     ))}
                 </ul>
-            </div>
+            </Card>
         </div>
     </div>
 );
