@@ -10,22 +10,49 @@
 
 **Hyena** is Primatif's comprehensive design system that transforms generic AI-generated content into brand-intelligent materials. It provides an AI-consumable foundation of design tokens, patterns, and templates that ensure consistent, professional brand expression across all generated content.
 
-## App Overview
+## Architecture Overview
 
-The interactive style guide includes the following sections:
+**Hyena** is built on **Atomic Design principles**, organizing components into a hierarchical system that promotes reusability, consistency, and maintainability.
 
-### **Design Foundation**
-- **Brand Colors** - Primary palette, functional tones, and semantic colors with usage guidelines
-- **Typography** - Font hierarchy using Bebas Neue, Roboto, and Lato with clear specifications
-- **Patterns & Backgrounds** - 9 distinct checkered patterns using tokenized color pairs
+### **Atomic Design System**
 
-### **Interactive Components**
-- **Buttons** - Various states and styles with implementation examples
-- **Tables** - Data presentation with branded styling
-- **Layout Examples** - Grid systems and responsive patterns
+#### **Atoms** - Basic building blocks
+- **Colors & Tokens** - Brand colors, spacing, and design tokens
+- **Typography** - Text, Heading, and typographic elements
+- **Form Elements** - Input, Button, Badge, and interactive components
+- **Media** - Image and visual content atoms
+- **Layout** - Card, Container, and structural elements
+
+#### **Molecules** - Simple component combinations
+- **Navigation** - Menu and navigation patterns
+- **Callouts** - Information boxes and alerts
+- **Code Blocks** - Syntax highlighting and code display
+- **Page Frames** - Layout containers with headers/footers
+- **Color Displays** - Palette and color presentation components
+
+#### **Organisms** - Complex component assemblies
+- **Style Guide Sections** - Typography, Buttons, Tables, Patterns
+- **Service Components** - ServiceSection, ExperienceSection, CoverPage
+- **Content Layouts** - HeadersAndFooters, Diagrams, Spacing
+- **Interactive Displays** - ColorPalette, ImageReferences
+
+#### **Templates** - Page-level layouts
+- **Application Templates** - ChatInterface, DataDashboard, EbookReader
+- **Business Templates** - ProposalCover, InternalReport, TechnicalWhitepaper
+- **Interactive Templates** - FormElements, TodoList, PersonalBanking
+- **Layout Systems** - Comprehensive layout demonstrations
+
+### **Storybook Integration**
+
+Every atomic component includes **Storybook stories** for:
+- **Component Documentation** - Usage examples and API reference
+- **Visual Testing** - All component states and variations
+- **Design QA** - Consistent implementation across the system
+- **Developer Experience** - Interactive component playground
 
 ### **Generated Documents**
-- **Service Sheet** - Professional service overview demonstrating real-world design system application
+- **Style Guide** - Interactive design system documentation
+- **Service Sheet** - Professional service overview (fully atomic)
 - **PDF Export** - Automated generation of print-ready documents
 
 <p align="center">
@@ -70,14 +97,29 @@ _For complete specifications and interactive examples, run the development serve
 
 ## Features
 
+### **Atomic Design System**
+- **Component Hierarchy** - Atoms, Molecules, Organisms, and Templates
+- **Token-Driven Design** - Centralized design tokens for consistency
+- **Composable Architecture** - Reusable components at every level
+- **Type-Safe Props** - Consistent component APIs across the system
+
+### **Storybook Integration**
+- **Component Documentation** - Interactive component catalog
+- **Visual Testing** - All component states and variations
+- **Design System QA** - Consistent implementation verification
+- **Developer Playground** - Real-time component experimentation
+
+### **Design Foundation**
 - **Interactive Color Palettes** - Brand colors, functional tones, and semantic colors
-- **Typography System** - Font hierarchy and usage guidelines
-- **Component Library** - Buttons, tables, patterns, and layouts
+- **Typography System** - Font hierarchy and usage guidelines with atomic Text/Heading components
 - **Pattern System** - 9 distinct background patterns with tokenized color pairs
-- **Service Sheet Generation** - Professional service overview documents with design system integration
 - **Responsive Design** - Mobile-first approach with defined breakpoints
+
+### **Generated Documents**
+- **Atomic Service Sheet** - Professional service overview built entirely from atomic components
+- **Interactive Style Guide** - Live documentation with component examples
 - **PDF Export** - Generate downloadable style guide and service documents
-- **Live Examples** - Interactive demonstrations of design principles
+- **Layout Templates** - Comprehensive page-level layout demonstrations
 
 ## Quick Start
 
@@ -100,9 +142,16 @@ _For complete specifications and interactive examples, run the development serve
    npm run dev
    ```
 
-3. **Open in browser**
-   - Navigate to `http://localhost:5173`
-   - The style guide will be live with hot reloading
+3. **Launch Storybook** (recommended for component development)
+
+   ```bash
+   npm run storybook
+   ```
+
+4. **Open in browser**
+   - **Style Guide**: Navigate to `http://localhost:5173`
+   - **Storybook**: Navigate to `http://localhost:6006`
+   - Both support hot reloading for rapid development
 
 ### Build for Production
 
@@ -167,9 +216,49 @@ The Service Sheet serves as both a functional business tool and a reference impl
 
 ```
 src/
-├── App.jsx          # Main style guide component
-├── main.jsx         # React app entry point
-└── index.css        # Tailwind CSS imports
+├── components/
+│   ├── atoms/           # Basic building blocks
+│   │   ├── Badge/
+│   │   ├── Button/
+│   │   ├── Card/
+│   │   ├── Container/
+│   │   ├── Heading/
+│   │   ├── Image/
+│   │   ├── Input/
+│   │   ├── Text/
+│   │   └── Textarea/
+│   ├── molecules/       # Simple combinations
+│   │   ├── Callout/
+│   │   ├── CodeBlock/
+│   │   ├── ColorDisplayTable/
+│   │   ├── Navigation/
+│   │   └── PageFrame/
+│   ├── organisms/       # Complex assemblies
+│   │   ├── Buttons/
+│   │   ├── ColorPalette/
+│   │   ├── CoverPage/
+│   │   ├── ExperienceSection/
+│   │   ├── ServiceSection/
+│   │   └── Typography/
+│   └── templates/       # Page-level layouts
+│       ├── ChatInterface/
+│       ├── DataDashboard/
+│       ├── FormElements/
+│       └── Layouts/
+├── data/               # Design tokens and content
+│   ├── colors.js       # Centralized color tokens
+│   ├── patterns.js     # Background patterns
+│   └── services.js     # Service content data
+├── pages/              # Application pages
+│   ├── collateral/ServiceSheet/
+│   └── style-guide/
+├── App.jsx             # Main application router
+├── main.jsx            # React app entry point
+└── index.css           # Global styles
+
+.storybook/             # Storybook configuration
+├── main.js
+└── preview.jsx
 
 config/
 ├── vite.config.js      # Vite configuration
@@ -179,11 +268,20 @@ config/
 
 ## Available Scripts
 
-- `npm run dev` - Start development server
+### **Development**
+- `npm run dev` - Start development server (`http://localhost:5173`)
+- `npm run storybook` - Launch Storybook (`http://localhost:6006`)
+- `npm run build-storybook` - Build static Storybook for deployment
+
+### **Production**
 - `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+
+### **PDF Generation**
 - `npm run generate-pdf` - Generate a PDF of the style guide
 - `npm run pdf:service-sheet` - Generate a PDF of the service sheet
-- `npm run preview` - Preview production build locally
+
+### **Quality Assurance**
 - `npm run lint` - Run ESLint
 
 ## Deployment
